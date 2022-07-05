@@ -49,8 +49,44 @@ function getCatBreed() {
         }
         // $("#cat-breed-img").attr("src", response[currentCatBreed].image.url);
         // console.log("XXXXXXXXXXXX " + catBreedList[0].image.url);
-        $("#cat-breed-name").text(response[currentCatBreed].name);
+        if (response[currentCatBreed].hasOwnProperty("name")) {
+            $("#cat-breed-name").text(response[currentCatBreed].name);
+        } else {
+            $("#cat-breed-name").text("...");
+        }
+
         //currentCatBreed++;
+        if (response[currentCatBreed].hasOwnProperty("description")) {
+            $('#cat-description').text(response[currentCatBreed].description);
+        } else {
+            $('#cat-description').text("Description: ...");
+        }
+
+        if (response[currentCatBreed].hasOwnProperty("origin")) {
+            $('#origin').html("<b>Origin:</b>  " + response[currentCatBreed].origin);
+        } else {
+            $('#origin').html("<b>Origin:</b> unknown");
+        }
+
+        if (response[currentCatBreed].hasOwnProperty("wikipedia_url")) {
+            $('#wikipedia-link').attr("href", response[currentCatBreed].wikipedia_url);
+        } else {
+            $('#wikipedia-link').attr("href", "#");
+        }
+
+        if (response[currentCatBreed].hasOwnProperty("weight")) {
+            $('#weight').html("<b>Weight:</b>  " + response[currentCatBreed].weight.metric + " kg");
+        } else {
+            $('#weight').html("<b>Weight:</b> unknown");
+        }
+
+
+        if (response[currentCatBreed].hasOwnProperty("life_span")) {
+            $('#life-span').html("<b>Life span:</b>  " + response[currentCatBreed].life_span + " years");
+        } else {
+            $('#life-span').html("<b>Life span:</b> unknown");
+        }
+
 
     });
 }

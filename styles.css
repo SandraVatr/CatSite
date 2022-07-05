@@ -62,16 +62,20 @@ html {
 .cat-image {
     border: 10px solid #FFDAC7;
     border-radius: 6px;
-    margin: 2em auto;
+    max-width: 90%;
+    height: auto;
+    /* padding: 1em; */
+    margin: 1em;
+    /* margin: 2em auto;
     display: block;
     width: 25em;
     height: 25em;
-    border-spacing: 0;
+    border-spacing: 0; */
 }
 
 .container-2 {
     background-color: #FFDAC7;
-    padding: auto;
+    padding: 1em;
     /* padding: 3em 10em;
     min-height: 50em; */
 }
@@ -104,4 +108,19 @@ html {
 
 .card-cat {
     margin: 1em auto;
+}
+
+.cat-card-content {
+    border: 10px solid rgb(192, 143, 143);
+    border-radius: 6px;
+    background-color: #FFF6EA;
+}
+
+#cat-breed-name {
+    font-weight: bold;
+}
+
+.cat-information {
+    padding: 1em;
+    margin: 1em;
 }
