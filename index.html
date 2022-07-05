@@ -6,24 +6,117 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Bootstrap, My CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Bootstrap Scripts, My Script -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script defer src="scripts.js"></script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
 
-    <title>Document</title>
+    <title>Catsite</title>
 </head>
 
 <body>
-    <div>
-        <button id="btn">Get cat image</button>
-        <h1 id="aaa">aaa</h1>
-        <img id="cat-img" src="" alt="" width="400px" height="400px">
+
+    <nav class="navbar navbar-expand-lg bg-light navigation-bar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Cats</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse justify-content-end nav-bar" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item navigation-item">
+                        <a class="nav-link navigation-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item navigation-item">
+                        <a class="nav-link navigation-link" href="#">Random cat</a>
+                    </li>
+                    <li class="nav-item navigation-item">
+                        <a class="nav-link navigation-link" href="#">Cat breeds</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="descr">
+        <!-- <h2>The best cat website</h2> -->
+        <!-- <div class="row">
+            <div class="col col-6">
+                <h1 id="aaa">aaa</h1>
+            </div>
+            <div class="col col-6">
+                <img class="cat-image" id="cat-img" src="" alt="" width="400px" height="400px">
+            </div>
+        </div> -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col col-lg-6">
+                    <h1 class="descr-text">Get to see lovely cat photos and read about different cat breeds!</h1>
+                </div>
+                <div class="col col-lg-6">
+                    <img class="cat-image" id="cat-img" src="" alt="" width="400px" height="400px">
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div>
-        <button id="breed">Get a cat breed</button>
-        <h1 id="cat-breed-name"></h1>
-        <img id="cat-breed-img" src="" alt="" width="400px" height="400px">
+
+    <div class="container-2">
+
+
+
+
+        <div class="container">
+            <div class="row card-cat">
+                <div class="col-12">
+                    <div class="card mb-2">
+                        <div class="row g-0">
+                            <div class="col-12 col-md-6">
+                                <img class="cat-breed-image" id="cat-breed-img" src="" alt="" width="400px" height="400px">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="cat-breed-name">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="container3">
+
+        <div class="row">
+            <div class="col">
+                <button id="btn">Get cat image</button>
+                <h1 id="aaa">aaa</h1>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button id="breed">Get a cat breed</button>
+                <!-- <h1 id="cat-breed-name"></h1> -->
+                <!-- <img id="cat-breed-img" src="" alt="" width="400px" height="400px"> -->
+            </div>
+        </div>
+    </div>
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
