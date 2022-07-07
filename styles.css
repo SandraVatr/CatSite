@@ -8,6 +8,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+h1 {
+    font-weight: bold;
+}
+
 html {
     overflow-x: hidden;
 }
@@ -18,9 +22,14 @@ html {
     /* #F9FFA4 */
 }
 
-.nav-bar {
-    /* margin-right: 2em; */
-}
+
+/* .nav-bar { */
+
+
+/* margin-right: 2em; */
+
+
+/* } */
 
 .navigation-item {
     /* color: #FFFFFF; */
@@ -123,4 +132,48 @@ html {
 .cat-information {
     padding: 1em;
     margin: 1em;
+}
+
+.catalog-msg {
+    color: rgb(79, 79, 79);
+    font-weight: bold;
+    margin: 3em 0;
+    padding: 0;
+    text-align: left;
+}
+
+.hide {
+    display: none;
+}
+
+.card-button {
+    background-color: rgb(192, 143, 143);
+    border: 5px solid rgb(192, 143, 143);
+    border-radius: 7px;
+    color: white;
+    font-weight: bold;
+    margin: 1.5em auto 1em;
+    max-width: 180px;
+    padding: 0.2em;
+    width: 50%;
+    text-align: center;
+}
+
+.card-button:hover {
+    background-color: #FFDAC7;
+}
+
+.card-buttons {
+    margin: 2em auto;
+    padding: auto;
+    text-align: center;
+}
+
+.card-count {
+    /* border: 5px solid rgb(192, 143, 143);
+    border-radius: 7px; */
+    color: rgb(192, 143, 143);
+    font-weight: bold;
+    margin: 1em auto;
+    text-align: center;
 }
