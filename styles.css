@@ -84,7 +84,7 @@ html {
 
 .container-2 {
     background-color: #FFDAC7;
-    padding: 1em;
+    padding: 1em 1em 0;
     /* padding: 3em 10em;
     min-height: 50em; */
 }
@@ -172,8 +172,23 @@ html {
 .card-count {
     /* border: 5px solid rgb(192, 143, 143);
     border-radius: 7px; */
-    color: rgb(192, 143, 143);
+    color: rgb(193, 144, 144);
     font-weight: bold;
     margin: 1em auto;
     text-align: center;
+}
+
+.cat-image-end {
+    display: block;
+    max-width: 400px;
+    max-height: 250px;
+    width: 80%;
+    height: 60%;
+    margin: auto;
+    padding: auto;
+    text-align: center;
+}
+
+.cat-image-end-of-page {
+    margin-bottom: 0;
 }
