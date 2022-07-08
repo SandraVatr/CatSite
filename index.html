@@ -27,7 +27,9 @@
 
     <nav class="navbar navbar-expand-lg bg-light navigation-bar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Cats</a>
+            <a class="navbar-brand" href="#">Cats
+            </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -37,7 +39,7 @@
                         <a class="nav-link navigation-link" href="#">About</a>
                     </li>
                     <li class="nav-item navigation-item">
-                        <a class="nav-link navigation-link" href="#">Random cat</a>
+                        <a class="nav-link navigation-link" id="random-cat" href="#">Random cat</a>
                     </li>
                     <li class="nav-item navigation-item">
                         <a class="nav-link navigation-link" id="cat-breeds-link" href="#">Cat breeds</a>
@@ -57,17 +59,19 @@
                 <img class="cat-image" id="cat-img" src="" alt="" width="400px" height="400px">
             </div>
         </div> -->
+        <img class="cat-tail" src="cattail.png" alt="" width="100px" height="170px">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <h1 class="descr-text">Get to see lovely cat photos and read about different cat breeds!</h1>
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 ct">
                     <img class="cat-image" id="cat-img" src="" alt="" width="400px" height="400px">
                 </div>
             </div>
         </div>
-
+        <img class="cat-tail-2" src="cattail.png" alt="" width="100px" height="170px">
+        <hr>
     </div>
 
     <div class="container-2">
@@ -112,11 +116,22 @@
             </div>
         </div>
 
+        <div class="container random-cat-box hide" id="random-cat-box">
+            <div class="row random-cat-msg">
+                <div class="col-12">
+                    <h2 class="msg">Here is your lovely cat image!</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <img class="random-cat-image" id="random-cat-img" src="" alt="" width="400px" height="400px">
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-12">
                 <button id="btn">Get cat image</button>
-                <h1 id="aaa">aaa</h1>
             </div>
         </div>
 
@@ -128,12 +143,8 @@
             </div>
         </div>
 
-        <div class="row cat-image-end-of-page">
-            <div class="col-12">
-                <h3>Made with love</h3>
-
-            </div>
-        </div>
+        <!-- <img src="paw.png" alt="" width="100px" height="70px"> -->
+        <!-- <img class="cat-tail-2" src="cattail.png" alt="" width="120px" height="200px"> -->
         <img class="cat-image-end" src="catImage3.png" alt="">
     </div>
 

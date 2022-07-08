@@ -10,6 +10,30 @@ const cat_card_count_text = document.getElementById("cat-card-count");
 
 const cat_card_box = document.getElementById("cat-card-box");
 
+const random_cat_link = document.getElementById("random-cat");
+random_cat_link.addEventListener("click", showRandomCatImage);
+const random_cat_box = document.getElementById("random-cat-box");
+
+
+var settingsBreed = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.thecatapi.com/v1/breeds?attach_breed=0",
+    "method": "GET",
+    "headers": {
+        "x-api-key": "5fc2e2ba-b43f-4240-87c0-cea8d35d15a7"
+    }
+}
+
+
+function showRandomCatImage() {
+    random_cat_box.classList.remove("hide");
+    // $("#random-cat-img").attr("src", "catImage3.png");
+    $.ajax(settings).done(function(response) {
+        console.log("zzzzzzzzzzz " + response[0].url);
+        $("#random-cat-img").attr("src", response[0].url);
+    });
+}
 
 function showCatBreedCard() {
     currentCatBreed = 0;
@@ -38,16 +62,6 @@ let rrr;
 
 // });
 
-
-var settingsBreed = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://api.thecatapi.com/v1/breeds?attach_breed=0",
-    "method": "GET",
-    "headers": {
-        "x-api-key": "5fc2e2ba-b43f-4240-87c0-cea8d35d15a7"
-    }
-}
 
 initializeCatBreedList();
 
@@ -227,8 +241,9 @@ function getCatImage() {
         // const cat = JSON.parse(response);
         // console.log("cat url " + response[0].url);
         rrr = response;
-        $("#aaa").text("Here is your cat image!"); //add text+ tags
+
         $("#cat-img").attr("src", rrr[0].url);
+        // $("#random-cat-img").attr("src", response.url);
     });
 
 }

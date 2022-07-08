@@ -42,7 +42,7 @@ html {
 }
 
 .nav-link:hover {
-    text-decoration: underline 7px solid rgb(162, 141, 141) !important;
+    text-decoration: underline 7px solid #FFDAC7 !important;
     text-underline-offset: 7px;
     /* border-bottom: 7px solid #FFDAC7;
     border-radius: 7px; */
@@ -59,12 +59,13 @@ html {
     background-color: #FFFEB7;
     margin: 0 auto;
     min-height: 30em;
+    padding: 0;
 }
 
 .descr-text {
     color: rgb(79, 79, 79);
     font-weight: bold;
-    padding-top: 1em;
+    padding-top: 0.2em;
     padding-left: 1em;
 }
 
@@ -75,6 +76,8 @@ html {
     height: auto;
     /* padding: 1em; */
     margin: 1em;
+    padding: auto;
+    text-align: center;
     /* margin: 2em auto;
     display: block;
     width: 25em;
@@ -82,9 +85,13 @@ html {
     border-spacing: 0; */
 }
 
+.ct {
+    text-align: center;
+}
+
 .container-2 {
     background-color: #FFDAC7;
-    padding: 1em 1em 0;
+    padding: 1em 0 0;
     /* padding: 3em 10em;
     min-height: 50em; */
 }
@@ -180,15 +187,65 @@ html {
 
 .cat-image-end {
     display: block;
-    max-width: 400px;
-    max-height: 250px;
+    max-width: 350px;
+    max-height: 200px;
     width: 80%;
     height: 60%;
-    margin: auto;
+    margin: 15em auto 0;
     padding: auto;
     text-align: center;
 }
 
 .cat-image-end-of-page {
     margin-bottom: 0;
+}
+
+.random-cat-box {
+    text-align: center;
+}
+
+.random-cat-msg {
+    color: rgb(79, 79, 79);
+    font-weight: bold;
+    margin: 3em 0;
+    text-align: center;
+}
+
+.random-cat-image {
+    border: 10px solid rgb(193, 144, 144);
+    border-radius: 6px;
+    max-width: 90%;
+    height: auto;
+    /* padding: 1em; */
+    /* margin: 1em; */
+}
+
+.msg {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.cat-tail {
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+.cat-tail-2 {
+    display: block;
+    margin: auto auto 0;
+    margin-right: 0;
+    padding: auto;
+    text-align: right;
+    transform: scaleX(-1);
+}
+
+hr {
+    background-color: rgb(193, 144, 144);
+    color: rgb(193, 144, 144);
+    height: 5px;
+    border: 1px solid rgb(193, 144, 144);
+    width: 100%;
+    margin: 0 auto 0;
+    opacity: 100%;
 }
