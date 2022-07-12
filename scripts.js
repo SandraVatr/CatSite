@@ -14,6 +14,7 @@ const random_cat_link = document.getElementById("random-cat");
 random_cat_link.addEventListener("click", showRandomCatImage);
 const random_cat_box = document.getElementById("random-cat-box");
 
+const cat_image_descr = document.getElementById("cat-img");
 
 var settingsBreed = {
     "async": true,
@@ -21,17 +22,69 @@ var settingsBreed = {
     "url": "https://api.thecatapi.com/v1/breeds?attach_breed=0",
     "method": "GET",
     "headers": {
-        "x-api-key": "5fc2e2ba-b43f-4240-87c0-cea8d35d15a7"
+        "x-api-key": ""
+    }
+}
+
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.thecatapi.com/v1/images/search?size=100",
+    "method": "GET",
+    "headers": {
+        "x-api-key": ""
     }
 }
 
 
+let api_key;
+apiKeyJsonData();
+
+function apiKeyJsonData() {
+    // copy data from JSON
+    fetch("App_Data/keys.json") // fetch(url) ---- for json file on the same level
+        .then(res => res.json())
+        .then(data => {
+            // copy data from JSON into local variable
+            api_key = JSON.parse(JSON.stringify(data));
+            settingsBreed.headers["x-api-key"] = api_key[0].api_key;
+            settings.headers["x-api-key"] = api_key[0].api_key;
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+}
+
+// var settings = {
+//     "async": true,
+//     "crossDomain": true,
+//     "url": "https://api.thecatapi.com/v1/images/search?size=100",
+//     "method": "GET",
+//     "headers": {
+//         "x-api-key": "5fc2e2ba-b43f-4240-87c0-cea8d35d15a7"
+//     }
+// }
+
+// var settingsBreed = {
+//     "async": true,
+//     "crossDomain": true,
+//     "url": "https://api.thecatapi.com/v1/breeds?attach_breed=0",
+//     "method": "GET",
+//     "headers": {
+//         "x-api-key": "5fc2e2ba-b43f-4240-87c0-cea8d35d15a7"
+//     }
+// }
+
 function showRandomCatImage() {
-    random_cat_box.classList.remove("hide");
+    // setTimeout(() => {
+    //     $("#random-cat-img").attr("src", response[0].url);
+    // }, 2000);
+
     // $("#random-cat-img").attr("src", "catImage3.png");
     $.ajax(settings).done(function(response) {
         console.log("zzzzzzzzzzz " + response[0].url);
         $("#random-cat-img").attr("src", response[0].url);
+        random_cat_box.classList.remove("hide");
     });
 }
 
@@ -42,15 +95,6 @@ function showCatBreedCard() {
 }
 
 
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://api.thecatapi.com/v1/images/search?size=100",
-    "method": "GET",
-    "headers": {
-        "x-api-key": "5fc2e2ba-b43f-4240-87c0-cea8d35d15a7"
-    }
-}
 
 let rrr;
 
@@ -213,6 +257,7 @@ function changeCatBreedCard(event) {
 
 }
 
+/*
 const catBreedBtn = document.getElementById("breed");
 catBreedBtn.addEventListener("click", () => {
     initializeCatBreedList();
@@ -220,6 +265,7 @@ catBreedBtn.addEventListener("click", () => {
     // console.log("XXXXXXXXXXXX " + catBreedList[0].image.url);
     // $("#cat-breed-name").text(catBreedList[0].name);
 })
+*/
 
 // var settingsBreed = {
 //     "async": true,
@@ -250,9 +296,26 @@ function getCatImage() {
 
 // getCatImage();
 
+
+/*
 const b = document.getElementById("btn");
 b.addEventListener("click", () => {
     getCatImage();
     // $("#aaa").text("Here is your cat image!"); //add text+ tags
     // $("#cat-img").attr("src", rrr[0].url);
 })
+*/
+
+// setInterval(changeCatImage, 5000);
+// loads first cat image in the description and waites 2 seconds to make sure the api cal to get the image is made
+changeCatImage();
+setTimeout(() => {
+    cat_image_descr.classList.remove("hide");
+}, 2000)
+
+
+function changeCatImage() {
+    $.ajax(settings).done(function(response) {
+        $("#cat-img").attr("src", response[0].url);
+    });
+}
