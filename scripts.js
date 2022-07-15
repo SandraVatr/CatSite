@@ -16,6 +16,16 @@ const random_cat_box = document.getElementById("random-cat-box");
 
 const cat_image_descr = document.getElementById("cat-img");
 
+const about_box = document.getElementById("about-box");
+const about_box_link = document.getElementById("about-box-link");
+about_box_link.addEventListener("click", showAboutBox);
+
+function showAboutBox() {
+    random_cat_box.classList.add("hide");
+    cat_card_box.classList.add("hide");
+    about_box.classList.remove("hide");
+}
+
 var settingsBreed = {
     "async": true,
     "crossDomain": true,
@@ -84,6 +94,8 @@ function showRandomCatImage() {
     $.ajax(settings).done(function(response) {
         console.log("zzzzzzzzzzz " + response[0].url);
         $("#random-cat-img").attr("src", response[0].url);
+        about_box.classList.add("hide");
+        cat_card_box.classList.add("hide");
         random_cat_box.classList.remove("hide");
     });
 }
@@ -91,6 +103,8 @@ function showRandomCatImage() {
 function showCatBreedCard() {
     currentCatBreed = 0;
     populateCatBreedCard();
+    about_box.classList.add("hide");
+    random_cat_box.classList.add("hide");
     cat_card_box.classList.remove("hide");
 }
 
