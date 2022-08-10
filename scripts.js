@@ -333,3 +333,20 @@ function changeCatImage() {
         $("#cat-img").attr("src", response[0].url);
     });
 }
+
+// make image animation in description, by changing its size
+setInterval(modifyPawImageSize, 800);
+const cat_paw_image = document.getElementById("cat-paws-img");
+
+
+function modifyPawImageSize() {
+    if (!about_box.classList.contains("hide")) {
+        if (cat_paw_image.classList.contains("zoom")) {
+            cat_paw_image.classList.remove("zoom");
+        } else {
+            cat_paw_image.classList.add("zoom");
+        }
+
+        console.log("QQQQQQQQQQQQqq");
+    }
+}

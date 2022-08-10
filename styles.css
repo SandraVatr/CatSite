@@ -29,6 +29,9 @@
     /* .nav-bar { */
     /* margin-right: 2em; */
     /* } */
+    /* .navbar-brand-icon:hover {
+        width: 130%;
+    } */
     
     .navigation-item {
         /* color: #FFFFFF; */
@@ -41,8 +44,12 @@
     }
     
     .nav-link:hover {
-        text-decoration: underline 7px solid #FFDAC7 !important;
-        text-underline-offset: 7px;
+        /* text-decoration: underline 7px solid #FFDAC7;
+        text-underline-offset: 7px; */
+        font-size: 130%;
+        color: rgb(206, 131, 131);
+        /* border: 4px solid #FFFEB7;
+        border-radius: 15px; */
         /* border-bottom: 7px solid #FFDAC7;
     border-radius: 7px; */
     }
@@ -56,7 +63,7 @@
         background-color: #FFFEB7;
         margin: 0 auto;
         min-height: 30em;
-        padding: 2em 0 0;
+        padding: 2.5em 0 0;
     }
     
     .descr-text {
@@ -64,6 +71,11 @@
         font-weight: bold;
         padding-top: 0.2em;
         padding-left: 1em;
+    }
+    
+    .bbb {
+        /* border: 10px solid #FFDAC7;
+        border-radius: 6px; */
     }
     
     .cat-image {
@@ -75,11 +87,16 @@
         margin: 1em;
         padding: auto;
         text-align: center;
+        opacity: 100%;
         /* margin: 2em auto;
     display: block;
     width: 25em;
     height: 25em;
     border-spacing: 0; */
+    }
+    
+    .cat-image:hover {
+        width: 110%;
     }
     
     .ct {
@@ -93,6 +110,10 @@
         color: rgb(79, 79, 79);
         padding: 3em;
         margin: 6em 0.5em;
+    }
+    
+    .zoom {
+        transform: scale(1.3);
     }
     
     .about-text {
@@ -235,6 +256,10 @@
         /* margin: 1em; */
     }
     
+    .random-cat-image:hover {
+        width: 75%;
+    }
+    
     .msg {
         font-weight: bold;
         margin-top: 1em;
@@ -270,13 +295,13 @@
         /* height: 300px; */
         /* width: 140px;
         height: 140px; */
-        width: 90%;
-        height: 80%;
+        width: 70%;
+        height: 60%;
         /* transform: rotate(-20deg); */
         /* text-align: center; */
         /* padding: 1em auto; */
         /* float: right; */
-        margin: 1em auto;
+        margin: 1em;
         padding: auto;
     }
     
