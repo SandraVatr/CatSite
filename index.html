@@ -24,11 +24,11 @@
 </head>
 
 <body>
-
+    <!-- Navigation bar with logo and links -->
     <nav class="navbar navbar-expand-lg bg-light navigation-bar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img class="navbar-brand-icon" src="catsLogoF.png" alt="" width="130" height="70">
+            <a class="navbar-brand zoom-on-hover" href="#">
+                <img class="navbar-brand-icon" src="images/catsLogoF.png" alt="" width="130" height="70">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,91 +50,74 @@
         </div>
     </nav>
 
+    <!-- Welcome area with a short message and changing images -->
     <div class="descr">
-        <!-- <h2>The best cat website</h2> -->
-        <!-- <div class="row">
-            <div class="col col-6">
-                <h1 id="aaa">aaa</h1>
-            </div>
-            <div class="col col-6">
-                <img class="cat-image" id="cat-img" src="" alt="" width="400px" height="400px">
-            </div>
-        </div> -->
-        <!-- <img class="cat-tail" src="cattail.png" alt="" width="70px" height="130px"> -->
         <div class="container">
-
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <div class="bbb">
-                        <div style="text-align: center; padding: 2em;">
-
-                            <img src="paw3.png" alt="" style="transform: rotate(-40deg);width: 80px; margin: 0 1em; padding: auto; text-align: center;">
-
-                            <img src="paw3.png" alt="" style="transform: rotate(40deg); width: 80px; margin: 0 1em; padding: auto; text-align: center;">
-
+                        <div class="zoom-on-hover" style="text-align: center; padding: 2em;">
+                            <img src="images/paw3.png" alt="" style="transform: rotate(-40deg);width: 80px; margin: 0 1em; padding: auto; text-align: center;">
+                            <img src="images/paw3.png" alt="" style="transform: rotate(40deg); width: 80px; margin: 0 1em; padding: auto; text-align: center;">
                         </div>
+
                         <h1 class="descr-text">Get to see lovely cat photos and read about different cat breeds!</h1>
-                        <!-- <div style="text-align: left; padding: 1em 2em;">
-                        <img src="paw3.png" alt="" style="transform: rotate(60deg);width: 30px; margin-left: 8em; margin-bottom: 4em; padding: auto; text-align: center;">
-                        <img src="paw3.png" alt="" style="transform: rotate(60deg); width: 30px; margin-left: 0.5em;  margin-top: 4em; padding: auto; text-align: center;">
-                    </div>
-                    <div style="text-align: left; padding: 0 2em;">
-                        <img src="paw3.png" alt="" style="transform: rotate(50deg);width: 30px; margin-bottom: 4em; margin-left: 6em; padding: auto; text-align: center;">
-                        <img src="paw3.png" alt="" style="transform: rotate(50deg); width:30px; margin-top: 4em; padding: auto; text-align: center;">
-                    </div> -->
-                        <!-- <div style="text-align: left; padding: 0 2em;">
-                        <img src="paw3.png" alt="" style="transform: rotate(0deg);width: 30px; margin-bottom: 3em; margin-left: 10em; padding: auto; text-align: center;">
-                        <img src="paw3.png" alt="" style="transform: rotate(40deg); width: 30px;  padding: auto; text-align: center;">
-                    </div> -->
 
-                        <div style="text-align: center; padding: 2em;">
-                            <img src="paw3.png" alt="" style="transform: rotate(-20deg);width: 60px; padding: auto; text-align: center;">
-                            <img src="paw3.png" alt="" style="transform: rotate(20deg); width: 60px; margin-top: 3em;  padding: auto; text-align: center;">
-                            <!-- <img src="paw3.png" alt="" style="transform: rotate(90deg);width: 30px; margin-left: 1em; margin-bottom: 3em; padding: auto; text-align: center;">
-                        <img src="paw3.png" alt="" style="transform: rotate(90deg); width: 30px; margin-top: 3em; padding: auto; text-align: center;"> -->
-
+                        <div class="zoom-on-hover" style="text-align: center; padding: 2em;">
+                            <img src="images/paw3.png" alt="" style="transform: rotate(-20deg);width: 60px; padding: auto; text-align: center;">
+                            <img src="images/paw3.png" alt="" style="transform: rotate(20deg); width: 60px; margin-top: 3em;  padding: auto; text-align: center;">
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 ct">
-                    <img class="cat-image hide" id="cat-img" src="" alt="" width="500px" height="500px">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <img class="cat-image zoom-on-hover hide" id="cat-img" src="" alt="" width="400px" height="400px">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <img class="cat-image zoom-on-hover hide" id="cat-img2" src="" alt="" width="400px" height="400px">
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <img class="cat-image zoom-on-hover hide" id="cat-img3" src="" alt="" width="400px" height="400px">
+                        </div>
+                        <!-- <div class="col-12 col-md-6">
+                            <img class="cat-image zoom-on-hover hide" id="cat-img4" src="" alt="" width="440px" height="440px">
+                        </div> -->
+                    </div>
                 </div>
             </div>
-
         </div>
-        <img class="cat-tail-2" src="cattail.png" alt="" width="90px" height="140px">
 
-
+        <img class="cat-tail-2" src="images/cattail.png" alt="" width="90px" height="140px">
     </div>
+
     <hr>
+    <!-- Display area of the page -->
     <div class="container-2">
+        <!-- About box wit web app description -->
         <div class="container hide" id="about-box">
             <div class="row description">
                 <div class="col-12 col-lg-5 paw-container">
-                    <img class="cat-paws nnn" id="cat-paws-img" src="paw4.png" alt="">
-
+                    <img class="cat-paws nnn" id="cat-paws-img" src="images/paw4.png" alt="">
                 </div>
                 <div class="col-12 col-lg-7">
-
                     <h1 class="about-text">Hi! Do you like cats?</h1>
-
                     <h2>If the answer is yes, this is the perfect place to learn facts about different cat breeds by browsing through our cat catalog.</h2>
                     <h2>Besides learning about these intriguing creatures, you can also entertain yourself with random funny cat photos.</h2>
-
                     <h3 class="citation">This web app was made using <a href="https://docs.thecatapi.com/" target="_blank">TheCatApi</a>.</h3>
-
                 </div>
-
             </div>
-
         </div>
 
+        <!-- Cat catalog box -->
         <div class="container hide" id="cat-card-box">
             <div class="row catalog-msg">
                 <div class="col-12">
                     <h1>Feel free to browse through our cat catalog!</h1>
                 </div>
             </div>
+
+            <!-- Card which contains cat breeeds info -->
             <div class="row card-cat">
                 <div class="col-12">
                     <div class="card mb-2 cat-card-content">
@@ -149,7 +132,6 @@
                                     <p id="origin">Origin: </p>
                                     <p id="weight">Weight: </p>
                                     <p id="life-span">Life span: </p>
-                                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                                     <a id="wikipedia-link" href="#" class="card-link" target="_blank">Find more</a>
                                 </div>
                             </div>
@@ -157,6 +139,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Buttons to navigate through the cat catalog and display info on the cat card -->
             <div class="row card-buttons">
                 <div class="col-12 col-md-5">
                     <button class="card-button" id="previous-cat-breed-btn">Previous</button>
@@ -170,6 +154,7 @@
             </div>
         </div>
 
+        <!-- Random cat image box -->
         <div class="container random-cat-box hide" id="random-cat-box">
             <div class="row random-cat-msg">
                 <div class="col-12">
@@ -183,22 +168,8 @@
             </div>
         </div>
 
-        <!-- <div class="row">
-            <div class="col-12">
-                <button id="btn">Get cat image</button>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <button id="breed">Get a cat breed</button>
-                
-            </div>
-        </div> -->
-
-        <!-- <img src="paw.png" alt="" width="100px" height="70px"> -->
-        <!-- <img class="cat-tail-2" src="cattail.png" alt="" width="120px" height="200px"> -->
-        <img class="cat-image-end" src="catBanner.png" alt="">
+        <!-- End Banner -->
+        <img class="cat-image-end" src="images/catBanner.png" alt="">
     </div>
 
     <div class="container3">
