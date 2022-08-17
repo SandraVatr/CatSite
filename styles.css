@@ -20,6 +20,9 @@
         color: rgb(192, 117, 117);
         font-weight: bold;
     }
+    /* .citation a:visited {
+        color: rgb(117, 192, 191);
+    } */
     
     .navigation-bar {
         background-color: #FFFEB7 !important;
@@ -96,7 +99,7 @@
     /* does not work */
     
     .cat-image:hover {
-        width: 110%;
+        width: 100%;
     }
     
     .ct {
