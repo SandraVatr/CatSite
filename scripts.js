@@ -99,6 +99,8 @@ function initializeCatBreedList() {
     $.ajax(settingsBreed).done(function(response) {
         // console.log("Cat breed list length: " + response.length);
         catBreedList = response;
+        console.log(catBreedList[0]);
+        console.log(catBreedList[1]);
         currentCatBreed = 0;
         populateCatBreedCard();
     });
@@ -107,61 +109,257 @@ function initializeCatBreedList() {
 // populates the cat breed card accordingly to the current breeed index
 function populateCatBreedCard() {
     // makes sure the cat breed array curend index isn't out of bounds
-    if (currentCatBreed >= 0 && currentCatBreed <= catBreedList.length - 1) {
-        if (currentCatBreed === 0) {
-            previous_cat_breed_button.classList.add("hide");
-        } else if (currentCatBreed === catBreedList.length - 1) {
-            next_cat_breed_button.classList.add("hide");
-        } else {
-            previous_cat_breed_button.classList.remove("hide");
-            next_cat_breed_button.classList.remove("hide");
+    if (catBreedList != null) {
+        console.log("yessssssssss");
+
+        if (currentCatBreed >= 0 && currentCatBreed <= catBreedList.length - 1) {
+            if (currentCatBreed === 0) {
+                previous_cat_breed_button.classList.add("hide");
+            } else if (currentCatBreed === catBreedList.length - 1) {
+                next_cat_breed_button.classList.add("hide");
+            } else {
+                previous_cat_breed_button.classList.remove("hide");
+                next_cat_breed_button.classList.remove("hide");
+            }
+
+            cat_card_count_text.innerText = (currentCatBreed + 1) + "/" + catBreedList.length;
+
+            // check if the current element of the cat breed array has all the properties needed for display
+            // if a property does not exist, it will be replaced by default text
+            if (catBreedList[currentCatBreed].hasOwnProperty('image')) {
+                $("#cat-breed-img").attr("src", catBreedList[currentCatBreed].image.url);
+                $("#cat-breed-img").attr("alt", "Image not found");
+            }
+
+            if (catBreedList[currentCatBreed].hasOwnProperty("name")) {
+                $("#cat-breed-name").text(catBreedList[currentCatBreed].name);
+            } else {
+                $("#cat-breed-name").text("...");
+            }
+
+            if (catBreedList[currentCatBreed].hasOwnProperty("description")) {
+                $('#cat-description').text(catBreedList[currentCatBreed].description);
+            } else {
+                $('#cat-description').text("Description: ...");
+            }
+
+            if (catBreedList[currentCatBreed].hasOwnProperty("origin")) {
+                $('#origin').html("<b>Origin:</b>  " + catBreedList[currentCatBreed].origin);
+            } else {
+                $('#origin').html("<b>Origin:</b> unknown");
+            }
+
+            if (catBreedList[currentCatBreed].hasOwnProperty("wikipedia_url")) {
+                $('#wikipedia-link').attr("href", catBreedList[currentCatBreed].wikipedia_url);
+            } else {
+                $('#wikipedia-link').attr("href", "#");
+            }
+
+            if (catBreedList[currentCatBreed].hasOwnProperty("weight")) {
+                $('#weight').html("<b>Weight:</b>  " + catBreedList[currentCatBreed].weight.metric + " kg");
+            } else {
+                $('#weight').html("<b>Weight:</b> unknown");
+            }
+
+            if (catBreedList[currentCatBreed].hasOwnProperty("temperament")) {
+                $('#temperament').html("<b>Temperament:</b>  " + catBreedList[currentCatBreed].temperament);
+            } else {
+                $('#temperament').html("<b>Temperament:</b> unknown");
+            }
+
+            // friendly around children property
+            if (catBreedList[currentCatBreed].hasOwnProperty("child_friendly")) {
+                // determine friendly level out of 5 and assign it
+                let friendly_level;
+                switch (catBreedList[currentCatBreed].child_friendly) {
+                    case 1:
+                        friendly_level = "not so friendly";
+                        break;
+                    case 2:
+                        friendly_level = "a little friendly";
+                        break;
+                    case 3:
+                        friendly_level = "mildly friendly";
+                        break;
+                    case 4:
+                        friendly_level = "friendly";
+                        break;
+                    case 5:
+                        friendly_level = "very friendly";
+                        break;
+                    default:
+                        friendly_level = "unknown";
+                }
+
+                $('#around-children').html("<b>Around children:</b>  " + friendly_level);
+            } else {
+                $('#around-children').html("<b>Around children:</b> unknown");
+            }
+
+            // friendly around dogs property
+            if (catBreedList[currentCatBreed].hasOwnProperty("dog_friendly")) {
+                // determine friendly level out of 5 and assign it
+                let friendly_level;
+                switch (catBreedList[currentCatBreed].dog_friendly) {
+                    case 1:
+                        friendly_level = "not so friendly";
+                        break;
+                    case 2:
+                        friendly_level = "a little friendly";
+                        break;
+                    case 3:
+                        friendly_level = "mildly friendly";
+                        break;
+                    case 4:
+                        friendly_level = "friendly";
+                        break;
+                    case 5:
+                        friendly_level = "very friendly";
+                        break;
+                    default:
+                        friendly_level = "unknown";
+                }
+
+                $('#around-dogs').html("<b>Around dogs:</b>  " + friendly_level);
+            } else {
+                $('#around-dogs').html("<b>Around dogs:</b> unknown");
+            }
+
+            // friendly around strangers property
+            if (catBreedList[currentCatBreed].hasOwnProperty("stranger_friendly")) {
+                // determine friendly level out of 5 and assign it
+                let friendly_level;
+                switch (catBreedList[currentCatBreed].stranger_friendly) {
+                    case 1:
+                        friendly_level = "not so friendly";
+                        break;
+                    case 2:
+                        friendly_level = "a little friendly";
+                        break;
+                    case 3:
+                        friendly_level = "mildly friendly";
+                        break;
+                    case 4:
+                        friendly_level = "friendly";
+                        break;
+                    case 5:
+                        friendly_level = "very friendly";
+                        break;
+                    default:
+                        friendly_level = "unknown";
+                }
+
+                $('#around-strangers').html("<b>Around strangers:</b>  " + friendly_level);
+            } else {
+                $('#around-strangers').html("<b>Around strangers:</b> unknown");
+            }
+
+
+            // vocalisation property
+            if (catBreedList[currentCatBreed].hasOwnProperty("vocalisation")) {
+                // determine friendly level out of 5 and assign it
+                let vocalisation_level;
+                switch (catBreedList[currentCatBreed].vocalisation) {
+                    case 1:
+                        vocalisation_level = "not vocal";
+                        break;
+                    case 2:
+                        vocalisation_level = "a little vocal";
+                        break;
+                    case 3:
+                        vocalisation_level = "mildly vocal";
+                        break;
+                    case 4:
+                        vocalisation_level = "vocal";
+                        break;
+                    case 5:
+                        vocalisation_level = "very vocal";
+                        break;
+                    default:
+                        vocalisation_level = "unknown";
+                }
+
+                $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+            } else {
+                $('#vocal').html("<b>Vocalisation:</b> unknown");
+            }
+
+            // intellignece property
+            if (catBreedList[currentCatBreed].hasOwnProperty("intelligence")) {
+                // clear intelligence bar
+                $("#intelligence-ball-1").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#intelligence-ball-2").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#intelligence-ball-3").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#intelligence-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#intelligence-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
+
+                let intellignece_level = catBreedList[currentCatBreed].intelligence;
+                // console.log("intell " + intellignece_level);
+                if (intellignece_level >= 1) {
+                    $("#intelligence-ball-1").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (intellignece_level >= 2) {
+                    $("#intelligence-ball-2").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (intellignece_level >= 3) {
+                    $("#intelligence-ball-3").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (intellignece_level >= 4) {
+                    $("#intelligence-ball-4").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (intellignece_level >= 5) {
+                    $("#intelligence-ball-5").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+
+                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+            } else {
+                // $('#vocal').html("<b>Vocalisation:</b> unknown");
+                // console.log("nooooooooooo ");
+            }
+
+            // energy property
+            if (catBreedList[currentCatBreed].hasOwnProperty("energy_level")) {
+                // clear intelligence bar
+                $("#energy-ball-1").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#energy-ball-2").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#energy-ball-3").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#ienergy-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#energy-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
+
+                let energy_level = catBreedList[currentCatBreed].energy_level;
+                // console.log("intell " + intellignece_level);
+                if (energy_level >= 1) {
+                    $("#energy-ball-1").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (energy_level >= 2) {
+                    $("#energy-ball-2").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (energy_level >= 3) {
+                    $("#energy-ball-3").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (energy_level >= 4) {
+                    $("#energy-ball-4").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (energy_level >= 5) {
+                    $("#energy-ball-5").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+
+                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+            } else {
+                // $('#energy').html("<b>Energy level:</b> unknown");
+                // console.log("nooooooooooo ");
+            }
+
+
+            if (catBreedList[currentCatBreed].hasOwnProperty("life_span")) {
+                $('#life-span').html("<b>Life span:</b>  " + catBreedList[currentCatBreed].life_span + " years");
+            } else {
+                $('#life-span').html("<b>Life span:</b> unknown");
+            }
+
         }
-
-        cat_card_count_text.innerText = (currentCatBreed + 1) + "/" + catBreedList.length;
-
-        // check if the current element of the cat breed array has all the properties needed for display
-        // if a property does not exist, it will be replaced by default text
-        if (catBreedList[currentCatBreed].hasOwnProperty('image')) {
-            $("#cat-breed-img").attr("src", catBreedList[currentCatBreed].image.url);
-            $("#cat-breed-img").attr("alt", "Image not found");
-        }
-
-        if (catBreedList[currentCatBreed].hasOwnProperty("name")) {
-            $("#cat-breed-name").text(catBreedList[currentCatBreed].name);
-        } else {
-            $("#cat-breed-name").text("...");
-        }
-
-        if (catBreedList[currentCatBreed].hasOwnProperty("description")) {
-            $('#cat-description').text(catBreedList[currentCatBreed].description);
-        } else {
-            $('#cat-description').text("Description: ...");
-        }
-
-        if (catBreedList[currentCatBreed].hasOwnProperty("origin")) {
-            $('#origin').html("<b>Origin:</b>  " + catBreedList[currentCatBreed].origin);
-        } else {
-            $('#origin').html("<b>Origin:</b> unknown");
-        }
-
-        if (catBreedList[currentCatBreed].hasOwnProperty("wikipedia_url")) {
-            $('#wikipedia-link').attr("href", catBreedList[currentCatBreed].wikipedia_url);
-        } else {
-            $('#wikipedia-link').attr("href", "#");
-        }
-
-        if (catBreedList[currentCatBreed].hasOwnProperty("weight")) {
-            $('#weight').html("<b>Weight:</b>  " + catBreedList[currentCatBreed].weight.metric + " kg");
-        } else {
-            $('#weight').html("<b>Weight:</b> unknown");
-        }
-
-        if (catBreedList[currentCatBreed].hasOwnProperty("life_span")) {
-            $('#life-span').html("<b>Life span:</b>  " + catBreedList[currentCatBreed].life_span + " years");
-        } else {
-            $('#life-span').html("<b>Life span:</b> unknown");
-        }
-
+    } else {
+        console.log("Cat breed list is empty");
     }
 }
 

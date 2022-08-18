@@ -139,6 +139,36 @@
     min-height: 50em; */
     }
     
+    .energy {
+        padding: 0.7em 0.7em 1.5em;
+    }
+    
+    .procentage-filled {
+        background-color: #14C38E;
+        border: 3px solid #14C38E;
+        border-radius: 6px;
+        color: #ffffff;
+        text-align: center;
+        /* margin: 1px auto; */
+        margin-left: 1px;
+        margin-bottom: 1px;
+        width: 25px;
+        height: 15px;
+    }
+    
+    .procentage-not-filled {
+        background-color: #cbfced;
+        border: 2px solid #14C38E;
+        border-radius: 6px;
+        color: rgb(79, 79, 79);
+        text-align: center;
+        /* margin: 1px auto; */
+        margin-left: 1px;
+        margin-bottom: 1px;
+        width: 25px;
+        height: 15px;
+    }
+    
     .cat-card {
         background-color: rgb(202, 160, 160);
         min-height: 60em;
@@ -149,6 +179,10 @@
     display: flex;
     justify-content: center;
     padding: auto; */
+    }
+    
+    .cat-breed-div {
+        text-align: center;
     }
     
     .cat-breed-image {
