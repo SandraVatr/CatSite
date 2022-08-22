@@ -139,7 +139,7 @@
     min-height: 50em; */
     }
     
-    .energy {
+    .level-points {
         padding: 0.7em 0.7em 1.5em;
     }
     
@@ -159,6 +159,32 @@
     .procentage-not-filled {
         background-color: #cbfced;
         border: 2px solid #14C38E;
+        border-radius: 6px;
+        color: rgb(79, 79, 79);
+        text-align: center;
+        /* margin: 1px auto; */
+        margin-left: 1px;
+        margin-bottom: 1px;
+        width: 25px;
+        height: 15px;
+    }
+    
+    .procentage-filled-affection {
+        background-color: #fd2727;
+        border: 3px solid #fd2727;
+        border-radius: 6px;
+        color: #ffffff;
+        text-align: center;
+        /* margin: 1px auto; */
+        margin-left: 1px;
+        margin-bottom: 1px;
+        width: 25px;
+        height: 15px;
+    }
+    
+    .procentage-not-filled-affection {
+        background-color: #fccbcb;
+        border: 2px solid #fd2727;
         border-radius: 6px;
         color: rgb(79, 79, 79);
         text-align: center;
@@ -214,8 +240,18 @@
     }
     
     .cat-information {
-        padding: 1em;
-        margin: 1em;
+        /* padding: 1em;
+        margin: 1em; */
+        padding: 0 1em 1em;
+        margin: 0 1em 1em;
+        /* border-left: 4px solid black; */
+    }
+    
+    @media screen and (min-width: 992px) {
+        .cat-information {
+            padding: 1em;
+            margin: 1em;
+        }
     }
     
     .catalog-msg {
@@ -275,6 +311,18 @@
     
     .cat-image-end-of-page {
         margin-bottom: 0;
+    }
+    
+    .cat-card-descr {
+        padding: 1em 1em 0;
+        margin: 1em 1em 0;
+    }
+    
+    @media screen and (min-width: 992px) {
+        .cat-card-descr {
+            padding: 1em;
+            margin: 1em;
+        }
     }
     
     .random-cat-box {

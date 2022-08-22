@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg bg-light navigation-bar">
         <div class="container-fluid">
             <a class="navbar-brand zoom-on-hover" href="#">
-                <img class="navbar-brand-icon" src="images/catsLogoF.png" alt="" width="130" height="70">
+                <img class="navbar-brand-icon" src="images/catsLogoFinal.png" alt="" width="130" height="70">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,25 +122,42 @@
                 <div class="col-12">
                     <div class="card mb-2 cat-card-content">
                         <div class="row g-0">
-                            <div class="col-12 col-lg-5 cat-breed-div">
-                                <img class="cat-breed-image" id="cat-breed-img" src="" alt="" width="400px" height="400px">
-                            </div>
-                            <div class="col-12 col-lg-7">
-                                <div class="card-body cat-information">
-                                    <h5 class="card-title" id="cat-breed-name">Card title</h5>
-                                    <p class="card-text" id="cat-description">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="col-12 col-lg-6">
+                                <div class="cat-breed-div">
+                                    <img class="cat-breed-image" id="cat-breed-img" src="" alt="" width="400px" height="400px">
+                                </div>
+                                <div class="cat-card-descr" style="text-align: left;">
+                                    <h5 class="card-title" id="cat-breed-name" style="margin-bottom: 1em">Card title</h5>
+                                    <p class="card-text" id="cat-description">This is a wider lead-iis a little bit longer.</p>
                                     <p id="origin">Origin: </p>
                                     <p id="weight">Weight: </p>
-                                    <p id="shedding">Shedding level: </p>
-                                    <p id="grooming">Grooming: </p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="card-body cat-information">
+                                    <!-- <h5 class="card-title" id="cat-breed-name">Card title</h5>
+                                        <p class="card-text" id="cat-description">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                                    <!-- <p id="origin">Origin: </p>
+                                    <p id="weight">Weight: </p> -->
+
+
                                     <p id="temperament">Temperament: </p>
                                     <p id="around-children">Around children: </p>
                                     <p id="around-dogs">Around dogs: </p>
                                     <p id="around-strangers">Around strangers: </p>
                                     <p id="vocal">Vocalisation: </p>
                                     <!-- <p id="intelligence"> -->
+                                    <b>Affection level:</b>
+                                    <div class="row level-points">
+                                        <div class="col-2" id="affection-ball-1"></div>
+                                        <div class="col-2" id="affection-ball-2"></div>
+                                        <div class="col-2" id="affection-ball-3"></div>
+                                        <div class="col-2" id="affection-ball-4"></div>
+                                        <div class="col-2" id="affection-ball-5"></div>
+                                    </div>
+
                                     <b> Intelligence level: </b>
-                                    <div class="row align-items-center energy">
+                                    <div class="row align-items-center level-points">
                                         <div class="col-2" id="intelligence-ball-1"></div>
                                         <div class="col-2" id="intelligence-ball-2"></div>
                                         <div class="col-2" id="intelligence-ball-3"></div>
@@ -149,19 +166,40 @@
                                     </div>
                                     <!-- </p> -->
 
-                                    <b> Energy level : </b>
-                                    <div class="row energy">
+                                    <b> Energy level: </b>
+                                    <div class="row level-points">
                                         <div class="col-2" id="energy-ball-1"></div>
                                         <div class="col-2" id="energy-ball-2"></div>
                                         <div class="col-2" id="energy-ball-3"></div>
                                         <div class="col-2" id="energy-ball-4"></div>
                                         <div class="col-2" id="energy-ball-5"></div>
                                     </div>
+
+                                    <b>Shedding level: </b>
+                                    <div class="row level-points">
+                                        <div class="col-2" id="shedding-ball-1"></div>
+                                        <div class="col-2" id="shedding-ball-2"></div>
+                                        <div class="col-2" id="shedding-ball-3"></div>
+                                        <div class="col-2" id="shedding-ball-4"></div>
+                                        <div class="col-2" id="shedding-ball-5"></div>
+                                    </div>
+
+                                    <b>Grooming level: </b>
+                                    <div class="row level-points">
+                                        <div class="col-2" id="grooming-ball-1"></div>
+                                        <div class="col-2" id="grooming-ball-2"></div>
+                                        <div class="col-2" id="grooming-ball-3"></div>
+                                        <div class="col-2" id="grooming-ball-4"></div>
+                                        <div class="col-2" id="grooming-ball-5"></div>
+                                    </div>
+
+
                                     <p id="life-span">Life span: </p>
                                     <a id="wikipedia-link" href="#" class="card-link" target="_blank">Find more</a>
 
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

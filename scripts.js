@@ -323,7 +323,7 @@ function populateCatBreedCard() {
                 $("#energy-ball-1").addClass("procentage-not-filled").removeClass("procentage-filled");
                 $("#energy-ball-2").addClass("procentage-not-filled").removeClass("procentage-filled");
                 $("#energy-ball-3").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#ienergy-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#energy-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
                 $("#energy-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
 
                 let energy_level = catBreedList[currentCatBreed].energy_level;
@@ -350,6 +350,104 @@ function populateCatBreedCard() {
                 // console.log("nooooooooooo ");
             }
 
+            //  shedding property
+            if (catBreedList[currentCatBreed].hasOwnProperty("shedding_level")) {
+                // clear intelligence bar
+                $("#shedding-ball-1").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#shedding-ball-2").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#shedding-ball-3").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#shedding-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#shedding-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
+
+                let shedding_level = catBreedList[currentCatBreed].shedding_level;
+                // console.log("intell " + intellignece_level);
+                if (shedding_level >= 1) {
+                    $("#shedding-ball-1").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (shedding_level >= 2) {
+                    $("#shedding-ball-2").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (shedding_level >= 3) {
+                    $("#shedding-ball-3").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (shedding_level >= 4) {
+                    $("#shedding-ball-4").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (shedding_level >= 5) {
+                    $("#shedding-ball-5").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+
+                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+            } else {
+                // $('#energy').html("<b>Energy level:</b> unknown");
+                // console.log("nooooooooooo ");
+            }
+
+            // grooming property
+            if (catBreedList[currentCatBreed].hasOwnProperty("grooming")) {
+                // clear intelligence bar
+                $("#grooming-ball-1").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#grooming-ball-2").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#grooming-ball-3").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#grooming-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
+                $("#grooming-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
+
+                let grooming_level = catBreedList[currentCatBreed].grooming;
+                // console.log("intell " + intellignece_level);
+                if (grooming_level >= 1) {
+                    $("#grooming-ball-1").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (grooming_level >= 2) {
+                    $("#grooming-ball-2").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (grooming_level >= 3) {
+                    $("#grooming-ball-3").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (grooming_level >= 4) {
+                    $("#grooming-ball-4").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+                if (grooming_level >= 5) {
+                    $("#grooming-ball-5").removeClass("procentage-not-filled").addClass("procentage-filled");
+                }
+
+                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+            } else {
+                // $('#energy').html("<b>Energy level:</b> unknown");
+                // console.log("nooooooooooo ");
+            }
+
+            // affection_level affection property
+            if (catBreedList[currentCatBreed].hasOwnProperty("affection_level")) {
+                // clear intelligence bar
+                $("#affection-ball-1").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
+                $("#affection-ball-2").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
+                $("#affection-ball-3").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
+                $("#affection-ball-4").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
+                $("#affection-ball-5").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
+
+                let affection_level = catBreedList[currentCatBreed].affection_level;
+                // console.log("intell " + intellignece_level);
+                if (affection_level >= 1) {
+                    $("#affection-ball-1").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
+                }
+                if (affection_level >= 2) {
+                    $("#affection-ball-2").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
+                }
+                if (affection_level >= 3) {
+                    $("#affection-ball-3").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
+                }
+                if (affection_level >= 4) {
+                    $("#affection-ball-4").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
+                }
+                if (affection_level >= 5) {
+                    $("#affection-ball-5").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
+                }
+
+                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+            } else {
+                // $('#energy').html("<b>Energy level:</b> unknown");
+                // console.log("nooooooooooo ");
+            }
 
             if (catBreedList[currentCatBreed].hasOwnProperty("life_span")) {
                 $('#life-span').html("<b>Life span:</b>  " + catBreedList[currentCatBreed].life_span + " years");
