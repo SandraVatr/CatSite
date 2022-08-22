@@ -393,7 +393,7 @@ function populateCatBreedCard() {
                 $("#grooming-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
 
                 let grooming_level = catBreedList[currentCatBreed].grooming;
-                console.log("intell " + intellignece_level);
+                // console.log("intell " + intellignece_level);
                 if (grooming_level >= 1) {
                     $("#grooming-ball-1").removeClass("procentage-not-filled").addClass("procentage-filled");
                 }
