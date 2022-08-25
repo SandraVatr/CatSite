@@ -106,6 +106,53 @@ function initializeCatBreedList() {
     });
 }
 
+// function to modify the ballpoint levels for different properties that exist for each breed
+function fillCharacteristicsLevels(propertyNameFromId = "", propertyInCatBreedArray = "") {
+    let procentageFilled = "procentage-filled";
+    let procentageNotFilled = "procentage-not-filled";
+
+    // if the current cat caracteristic is affection, the class that changes the ballpoints color is a different one
+    if (propertyInCatBreedArray === "affection_level") {
+        procentageFilled = "procentage-filled-affection";
+        procentageNotFilled = "procentage-not-filled-affection";
+    }
+    if (propertyNameFromId != "" && propertyInCatBreedArray != "") {
+        // resets all 5 ballpoints to not be filled with color, accordingly to the wanted characteristic
+        $("#" + propertyNameFromId + "-ball-1").addClass(procentageNotFilled).removeClass(procentageFilled);
+        $("#" + propertyNameFromId + "-ball-2").addClass(procentageNotFilled).removeClass(procentageFilled);
+        $("#" + propertyNameFromId + "-ball-3").addClass(procentageNotFilled).removeClass(procentageFilled);
+        $("#" + propertyNameFromId + "-ball-4").addClass(procentageNotFilled).removeClass(procentageFilled);
+        $("#" + propertyNameFromId + "-ball-5").addClass(procentageNotFilled).removeClass(procentageFilled);
+
+        // get property level from the current cat breed array item 
+        let property_level = -1;
+        property_level = catBreedList[currentCatBreed][propertyInCatBreedArray];
+        console.log(propertyNameFromId + " property level " + property_level);
+
+        if (property_level >= 1) {
+            $("#" + propertyNameFromId + "-ball-1").removeClass(procentageNotFilled).addClass(procentageFilled);
+        }
+        if (property_level >= 2) {
+            $("#" + propertyNameFromId + "-ball-2").removeClass(procentageNotFilled).addClass(procentageFilled);
+        }
+        if (property_level >= 3) {
+            $("#" + propertyNameFromId + "-ball-3").removeClass(procentageNotFilled).addClass(procentageFilled);
+        }
+        if (property_level >= 4) {
+            $("#" + propertyNameFromId + "-ball-4").removeClass(procentageNotFilled).addClass(procentageFilled);
+        }
+        if (property_level >= 5) {
+            $("#" + propertyNameFromId + "-ball-5").removeClass(procentageNotFilled).addClass(procentageFilled);
+        }
+
+        // reset the class that changes the ballpoints color to the default one == green color
+        procentageFilled = "procentage-filled";
+        procentageNotFilled = "procentage-not-filled";
+    } else {
+
+    }
+}
+
 // populates the cat breed card accordingly to the current breeed index
 function populateCatBreedCard() {
     // makes sure the cat breed array curend index isn't out of bounds
@@ -286,167 +333,42 @@ function populateCatBreedCard() {
 
             // intellignece property
             if (catBreedList[currentCatBreed].hasOwnProperty("intelligence")) {
-                // clear intelligence bar
-                $("#intelligence-ball-1").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#intelligence-ball-2").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#intelligence-ball-3").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#intelligence-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#intelligence-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
-
-                let intellignece_level = catBreedList[currentCatBreed].intelligence;
-                // console.log("intell " + intellignece_level);
-                if (intellignece_level >= 1) {
-                    $("#intelligence-ball-1").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (intellignece_level >= 2) {
-                    $("#intelligence-ball-2").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (intellignece_level >= 3) {
-                    $("#intelligence-ball-3").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (intellignece_level >= 4) {
-                    $("#intelligence-ball-4").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (intellignece_level >= 5) {
-                    $("#intelligence-ball-5").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-
-                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+                // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
+                fillCharacteristicsLevels("intelligence", "intelligence");
             } else {
-                // $('#vocal').html("<b>Vocalisation:</b> unknown");
-                // console.log("nooooooooooo ");
+                $("#intelligence-level-text").html("<b>Intelligence level: </b> unknown");
             }
 
             // energy property
             if (catBreedList[currentCatBreed].hasOwnProperty("energy_level")) {
-                // clear intelligence bar
-                $("#energy-ball-1").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#energy-ball-2").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#energy-ball-3").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#energy-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#energy-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
-
-                let energy_level = catBreedList[currentCatBreed].energy_level;
-                // console.log("intell " + intellignece_level);
-                if (energy_level >= 1) {
-                    $("#energy-ball-1").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (energy_level >= 2) {
-                    $("#energy-ball-2").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (energy_level >= 3) {
-                    $("#energy-ball-3").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (energy_level >= 4) {
-                    $("#energy-ball-4").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (energy_level >= 5) {
-                    $("#energy-ball-5").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-
-                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+                // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
+                fillCharacteristicsLevels("energy", "energy_level");
             } else {
-                // $('#energy').html("<b>Energy level:</b> unknown");
-                // console.log("nooooooooooo ");
+                $("#energy-level-text").html("<b>Energy level: </b> unknown");
             }
 
             //  shedding property
             if (catBreedList[currentCatBreed].hasOwnProperty("shedding_level")) {
-                // clear intelligence bar
-                $("#shedding-ball-1").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#shedding-ball-2").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#shedding-ball-3").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#shedding-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#shedding-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
-
-                let shedding_level = catBreedList[currentCatBreed].shedding_level;
-                // console.log("intell " + intellignece_level);
-                if (shedding_level >= 1) {
-                    $("#shedding-ball-1").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (shedding_level >= 2) {
-                    $("#shedding-ball-2").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (shedding_level >= 3) {
-                    $("#shedding-ball-3").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (shedding_level >= 4) {
-                    $("#shedding-ball-4").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (shedding_level >= 5) {
-                    $("#shedding-ball-5").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-
-                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+                // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
+                fillCharacteristicsLevels("shedding", "shedding_level");
             } else {
-                // $('#energy').html("<b>Energy level:</b> unknown");
-                // console.log("nooooooooooo ");
+                $("#shedding-level-text").html("<b>Shedding level: </b> unknown");
             }
 
             // grooming property
             if (catBreedList[currentCatBreed].hasOwnProperty("grooming")) {
-                // clear intelligence bar
-                $("#grooming-ball-1").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#grooming-ball-2").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#grooming-ball-3").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#grooming-ball-4").addClass("procentage-not-filled").removeClass("procentage-filled");
-                $("#grooming-ball-5").addClass("procentage-not-filled").removeClass("procentage-filled");
-
-                let grooming_level = catBreedList[currentCatBreed].grooming;
-                // console.log("intell " + intellignece_level);
-                if (grooming_level >= 1) {
-                    $("#grooming-ball-1").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (grooming_level >= 2) {
-                    $("#grooming-ball-2").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (grooming_level >= 3) {
-                    $("#grooming-ball-3").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (grooming_level >= 4) {
-                    $("#grooming-ball-4").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-                if (grooming_level >= 5) {
-                    $("#grooming-ball-5").removeClass("procentage-not-filled").addClass("procentage-filled");
-                }
-
-                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+                // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
+                fillCharacteristicsLevels("grooming", "grooming");
             } else {
-                // $('#energy').html("<b>Energy level:</b> unknown");
-                // console.log("nooooooooooo ");
+                $("#grooming-level-tex").html("<b>Grooming level: </b> unknown");
             }
 
-            // affection_level affection property
+            // affection property
             if (catBreedList[currentCatBreed].hasOwnProperty("affection_level")) {
-                // clear intelligence bar
-                $("#affection-ball-1").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
-                $("#affection-ball-2").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
-                $("#affection-ball-3").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
-                $("#affection-ball-4").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
-                $("#affection-ball-5").addClass("procentage-not-filled-affection").removeClass("procentage-filled-affection");
-
-                let affection_level = catBreedList[currentCatBreed].affection_level;
-                // console.log("intell " + intellignece_level);
-                if (affection_level >= 1) {
-                    $("#affection-ball-1").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
-                }
-                if (affection_level >= 2) {
-                    $("#affection-ball-2").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
-                }
-                if (affection_level >= 3) {
-                    $("#affection-ball-3").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
-                }
-                if (affection_level >= 4) {
-                    $("#affection-ball-4").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
-                }
-                if (affection_level >= 5) {
-                    $("#affection-ball-5").removeClass("procentage-not-filled-affection").addClass("procentage-filled-affection");
-                }
-
-                // $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
+                // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
+                fillCharacteristicsLevels("affection", "affection_level");
             } else {
-                // $('#energy').html("<b>Energy level:</b> unknown");
-                // console.log("nooooooooooo ");
+                $("#affection-level-text").html("<b>Affection level: </b> unknown");
             }
 
             if (catBreedList[currentCatBreed].hasOwnProperty("life_span")) {
@@ -462,20 +384,63 @@ function populateCatBreedCard() {
 }
 
 // repopulates the cat breed card with the current cat breeed info given by the current index in the cat breeds array
+// is called by user clicking the cat breeed card buttons
 function changeCatBreedCard(event) {
     // verify from which button the function was called
     if (event.target.id === "previous-cat-breed-btn") {
+        // if (currentCatBreed - 1 >= 0) {
+        //     currentCatBreed -= 1;
+        // }
+        // populateCatBreedCard();
+        changeCurrentCatBreed(0);
+    } else if (event.target.id === "next-cat-breed-btn") {
+        // if (currentCatBreed + 1 <= catBreedList.length - 1) {
+        //     currentCatBreed += 1;
+        // }
+        // populateCatBreedCard();
+        changeCurrentCatBreed(1);
+    }
+}
+
+function changeCurrentCatBreed(action = 2) {
+    // 0 == previous cat breed, 1 == next cat breed
+    if (action === 0) {
         if (currentCatBreed - 1 >= 0) {
             currentCatBreed -= 1;
         }
         populateCatBreedCard();
-    } else if (event.target.id === "next-cat-breed-btn") {
+    } else if (action === 1) {
         if (currentCatBreed + 1 <= catBreedList.length - 1) {
             currentCatBreed += 1;
         }
         populateCatBreedCard();
     }
+
 }
+
+// user clicks left or right arrow when cat card is visible
+function handleUserArrowClick(arrowPressed = "") {
+    if (arrowPressed === "ArrowLeft") {
+        changeCurrentCatBreed(0);
+    } else if (arrowPressed === "ArrowRight") {
+        changeCurrentCatBreed(1);
+    }
+}
+
+// see when the user presses side arrow keys
+document.onkeydown = function(e) {
+    switch (e.key) {
+        case 'ArrowLeft':
+            // left arrow
+            console.log("left");
+            handleUserArrowClick(e.key);
+            break;
+        case 'ArrowRight':
+            // right arrow
+            console.log("right");
+            handleUserArrowClick(e.key);
+    }
+};
 
 // set intervals for Welcome area images changing
 // setInterval(changeCatImage1, 4000);
@@ -526,7 +491,20 @@ function modifyPawImageSize() {
         } else {
             cat_paw_image.classList.add("zoom");
         }
-
-        console.log("QQQQQQQQQQQQqq");
     }
 }
+
+
+
+// Add event listener on keypress
+// document.addEventListener('keypress', (event) => {
+//     var name = event.key;
+//     var code = event.code;
+
+//     if (event.key == "ArrowLeft") {
+//         // up arrow
+//         console.log("upppppppppp");
+//     }
+//     // Alert the key name and key code on keydown
+//     console.log(`Key pressed ${name} \r\n Key code value: ${code}`);
+// }, false);
