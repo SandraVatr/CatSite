@@ -452,7 +452,7 @@ changeCatImage1();
 changeCatImage2();
 changeCatImage3();
 
-// comment for testing ssh key
+// comment for testing ssh key after making repo public and back to private
 
 // loads the 3 cat images in the description area and waites 2 seconds to make sure the api calls to get the images are made
 setTimeout(() => {
