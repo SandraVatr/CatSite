@@ -444,8 +444,8 @@ document.onkeydown = function(e) {
 
 // set intervals for Welcome area images changing
 // setInterval(changeCatImage1, 4000);
-// setInterval(changeCatImage2, 5000);
-// setInterval(changeCatImage3, 6000);
+// setInterval(changeCatImage2, 7000);
+// setInterval(changeCatImage3, 9000);
 
 // change the 3 cat images from the description area
 changeCatImage1();
@@ -493,18 +493,3 @@ function modifyPawImageSize() {
         }
     }
 }
-
-
-
-// Add event listener on keypress
-// document.addEventListener('keypress', (event) => {
-//     var name = event.key;
-//     var code = event.code;
-
-//     if (event.key == "ArrowLeft") {
-//         // up arrow
-//         console.log("upppppppppp");
-//     }
-//     // Alert the key name and key code on keydown
-//     console.log(`Key pressed ${name} \r\n Key code value: ${code}`);
-// }, false);

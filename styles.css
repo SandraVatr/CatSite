@@ -145,7 +145,7 @@
     
     .procentage-filled {
         background-color: #14C38E;
-        border: 3px solid #14C38E;
+        border: 2px solid #14C38E;
         border-radius: 6px;
         color: #ffffff;
         text-align: center;
@@ -171,7 +171,7 @@
     
     .procentage-filled-affection {
         background-color: #fd2727;
-        border: 3px solid #fd2727;
+        border: 2px solid #fd2727;
         border-radius: 6px;
         color: #ffffff;
         text-align: center;
