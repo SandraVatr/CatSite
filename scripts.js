@@ -447,7 +447,7 @@ document.onkeydown = function(e) {
 // setInterval(changeCatImage2, 7000);
 // setInterval(changeCatImage3, 9000);
 
-// change the 3 cat images from the description area with new ones
+// change the 3 cat images from the description area with some new ones
 changeCatImage1();
 changeCatImage2();
 changeCatImage3();
