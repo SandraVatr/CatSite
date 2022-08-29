@@ -55,7 +55,7 @@ var settings = {
 let api_key;
 apiKeyJsonData();
 
-// copy the api key from JSON file
+// copy the api key from the JSON file
 function apiKeyJsonData() {
     // copy data from JSON
     fetch("App_Data/keys.json") // fetch(url) ---- for json file on the same level
