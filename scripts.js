@@ -14,6 +14,7 @@ const random_cat_link = document.getElementById("random-cat");
 random_cat_link.addEventListener("click", showRandomCatImage);
 const random_cat_box = document.getElementById("random-cat-box");
 
+// cat images from the welcome section
 const cat_image_descr = document.getElementById("cat-img");
 const cat_image2_descr = document.getElementById("cat-img2");
 const cat_image3_descr = document.getElementById("cat-img3");
@@ -90,8 +91,6 @@ function showCatBreedCard() {
     cat_card_box.classList.remove("hide");
 }
 
-let rrr;
-
 initializeCatBreedList();
 
 // initializes the cat breed list with the api response
@@ -100,11 +99,40 @@ function initializeCatBreedList() {
         // console.log("Cat breed list length: " + response.length);
         catBreedList = response;
         console.log(catBreedList[0]);
-        console.log(catBreedList[1]);
+        // console.log(catBreedList[1]);
         currentCatBreed = 0;
         populateCatBreedCard();
     });
 }
+
+// modify thre friendliness levels accordingly to the needed property
+function displayFriendlynessLevel(friendlinessLevel = -1, propertyId = "", nameOfProperty = "") {
+    if (friendlinessLevel != -1 && propertyId != "" && nameOfProperty != "") {
+        let level;
+        switch (friendlinessLevel) {
+            case 1:
+                level = "not so friendly";
+                break;
+            case 2:
+                level = "a little friendly";
+                break;
+            case 3:
+                level = "mildly friendly";
+                break;
+            case 4:
+                level = "friendly";
+                break;
+            case 5:
+                level = "very friendly";
+                break;
+            default:
+                level = "unknown";
+        }
+        // sets the text of the element with the provided ID to the corresponding one
+        $("#" + propertyId).html("<b>Around</b> " + "<b> " + nameOfProperty + ":</b> " + level);
+    }
+}
+
 
 // function to modify the ballpoint levels for different properties that exist for each breed
 function fillCharacteristicsLevels(propertyNameFromId = "", propertyInCatBreedArray = "") {
@@ -157,8 +185,6 @@ function fillCharacteristicsLevels(propertyNameFromId = "", propertyInCatBreedAr
 function populateCatBreedCard() {
     // makes sure the cat breed array curend index isn't out of bounds
     if (catBreedList != null) {
-        console.log("yessssssssss");
-
         if (currentCatBreed >= 0 && currentCatBreed <= catBreedList.length - 1) {
             if (currentCatBreed === 0) {
                 previous_cat_breed_button.classList.add("hide");
@@ -178,131 +204,70 @@ function populateCatBreedCard() {
                 $("#cat-breed-img").attr("alt", "Image not found");
             }
 
+            // set the cat breed name
             if (catBreedList[currentCatBreed].hasOwnProperty("name")) {
                 $("#cat-breed-name").text(catBreedList[currentCatBreed].name);
             } else {
                 $("#cat-breed-name").text("...");
             }
 
+            // set the description text
             if (catBreedList[currentCatBreed].hasOwnProperty("description")) {
                 $('#cat-description').text(catBreedList[currentCatBreed].description);
             } else {
                 $('#cat-description').text("Description: ...");
             }
 
+            // set the origin 
             if (catBreedList[currentCatBreed].hasOwnProperty("origin")) {
                 $('#origin').html("<b>Origin:</b>  " + catBreedList[currentCatBreed].origin);
             } else {
                 $('#origin').html("<b>Origin:</b> unknown");
             }
 
+            // set the information url
             if (catBreedList[currentCatBreed].hasOwnProperty("wikipedia_url")) {
                 $('#wikipedia-link').attr("href", catBreedList[currentCatBreed].wikipedia_url);
             } else {
                 $('#wikipedia-link').attr("href", "#");
             }
 
+            // set the weight 
             if (catBreedList[currentCatBreed].hasOwnProperty("weight")) {
                 $('#weight').html("<b>Weight:</b>  " + catBreedList[currentCatBreed].weight.metric + " kg");
             } else {
                 $('#weight').html("<b>Weight:</b> unknown");
             }
 
+            // set the temperament characteristics
             if (catBreedList[currentCatBreed].hasOwnProperty("temperament")) {
                 $('#temperament').html("<b>Temperament:</b>  " + catBreedList[currentCatBreed].temperament);
             } else {
                 $('#temperament').html("<b>Temperament:</b> unknown");
             }
 
-            // friendly around children property
+            // set friendly around children property
             if (catBreedList[currentCatBreed].hasOwnProperty("child_friendly")) {
-                // determine friendly level out of 5 and assign it
-                let friendly_level;
-                switch (catBreedList[currentCatBreed].child_friendly) {
-                    case 1:
-                        friendly_level = "not so friendly";
-                        break;
-                    case 2:
-                        friendly_level = "a little friendly";
-                        break;
-                    case 3:
-                        friendly_level = "mildly friendly";
-                        break;
-                    case 4:
-                        friendly_level = "friendly";
-                        break;
-                    case 5:
-                        friendly_level = "very friendly";
-                        break;
-                    default:
-                        friendly_level = "unknown";
-                }
-
-                $('#around-children').html("<b>Around children:</b>  " + friendly_level);
+                displayFriendlynessLevel(catBreedList[currentCatBreed].child_friendly, "around-children", "children");
             } else {
                 $('#around-children').html("<b>Around children:</b> unknown");
             }
 
-            // friendly around dogs property
+            // set friendly around dogs property
             if (catBreedList[currentCatBreed].hasOwnProperty("dog_friendly")) {
-                // determine friendly level out of 5 and assign it
-                let friendly_level;
-                switch (catBreedList[currentCatBreed].dog_friendly) {
-                    case 1:
-                        friendly_level = "not so friendly";
-                        break;
-                    case 2:
-                        friendly_level = "a little friendly";
-                        break;
-                    case 3:
-                        friendly_level = "mildly friendly";
-                        break;
-                    case 4:
-                        friendly_level = "friendly";
-                        break;
-                    case 5:
-                        friendly_level = "very friendly";
-                        break;
-                    default:
-                        friendly_level = "unknown";
-                }
-
-                $('#around-dogs').html("<b>Around dogs:</b>  " + friendly_level);
+                displayFriendlynessLevel(catBreedList[currentCatBreed].dog_friendly, "around-dogs", "dogs");
             } else {
                 $('#around-dogs').html("<b>Around dogs:</b> unknown");
             }
 
-            // friendly around strangers property
+            // set friendly around strangers property
             if (catBreedList[currentCatBreed].hasOwnProperty("stranger_friendly")) {
-                // determine friendly level out of 5 and assign it
-                let friendly_level;
-                switch (catBreedList[currentCatBreed].stranger_friendly) {
-                    case 1:
-                        friendly_level = "not so friendly";
-                        break;
-                    case 2:
-                        friendly_level = "a little friendly";
-                        break;
-                    case 3:
-                        friendly_level = "mildly friendly";
-                        break;
-                    case 4:
-                        friendly_level = "friendly";
-                        break;
-                    case 5:
-                        friendly_level = "very friendly";
-                        break;
-                    default:
-                        friendly_level = "unknown";
-                }
-
-                $('#around-strangers').html("<b>Around strangers:</b>  " + friendly_level);
+                displayFriendlynessLevel(catBreedList[currentCatBreed].stranger_friendly, "around-strangers", "strangers");
             } else {
                 $('#around-strangers').html("<b>Around strangers:</b> unknown");
             }
 
-
-            // vocalisation property
+            // set vocalisation property
             if (catBreedList[currentCatBreed].hasOwnProperty("vocalisation")) {
                 // determine friendly level out of 5 and assign it
                 let vocalisation_level;
@@ -325,13 +290,13 @@ function populateCatBreedCard() {
                     default:
                         vocalisation_level = "unknown";
                 }
-
+                // set the vocalisation level text to the element
                 $('#vocal').html("<b>Vocalisation:</b>  " + vocalisation_level);
             } else {
                 $('#vocal').html("<b>Vocalisation:</b> unknown");
             }
 
-            // intellignece property
+            // set intellignece property
             if (catBreedList[currentCatBreed].hasOwnProperty("intelligence")) {
                 // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
                 fillCharacteristicsLevels("intelligence", "intelligence");
@@ -339,7 +304,7 @@ function populateCatBreedCard() {
                 $("#intelligence-level-text").html("<b>Intelligence level: </b> unknown");
             }
 
-            // energy property
+            // set energy property
             if (catBreedList[currentCatBreed].hasOwnProperty("energy_level")) {
                 // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
                 fillCharacteristicsLevels("energy", "energy_level");
@@ -347,7 +312,7 @@ function populateCatBreedCard() {
                 $("#energy-level-text").html("<b>Energy level: </b> unknown");
             }
 
-            //  shedding property
+            // set shedding property
             if (catBreedList[currentCatBreed].hasOwnProperty("shedding_level")) {
                 // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
                 fillCharacteristicsLevels("shedding", "shedding_level");
@@ -355,7 +320,7 @@ function populateCatBreedCard() {
                 $("#shedding-level-text").html("<b>Shedding level: </b> unknown");
             }
 
-            // grooming property
+            // set grooming property
             if (catBreedList[currentCatBreed].hasOwnProperty("grooming")) {
                 // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
                 fillCharacteristicsLevels("grooming", "grooming");
@@ -363,7 +328,7 @@ function populateCatBreedCard() {
                 $("#grooming-level-tex").html("<b>Grooming level: </b> unknown");
             }
 
-            // affection property
+            // set affection property
             if (catBreedList[currentCatBreed].hasOwnProperty("affection_level")) {
                 // call filling levels function with the name used in the ballpoints id and the object property from the cat breed list 
                 fillCharacteristicsLevels("affection", "affection_level");
@@ -371,12 +336,12 @@ function populateCatBreedCard() {
                 $("#affection-level-text").html("<b>Affection level: </b> unknown");
             }
 
+            // set life span property
             if (catBreedList[currentCatBreed].hasOwnProperty("life_span")) {
                 $('#life-span').html("<b>Life span:</b>  " + catBreedList[currentCatBreed].life_span + " years");
             } else {
                 $('#life-span').html("<b>Life span:</b> unknown");
             }
-
         }
     } else {
         console.log("Cat breed list is empty");
@@ -402,6 +367,7 @@ function changeCatBreedCard(event) {
     }
 }
 
+// change the info from cat breed card to the next or previous cat breed
 function changeCurrentCatBreed(action = 2) {
     // 0 == previous cat breed, 1 == next cat breed
     if (action === 0) {
@@ -415,14 +381,13 @@ function changeCurrentCatBreed(action = 2) {
         }
         populateCatBreedCard();
     }
-
 }
 
 // user clicks left or right arrow when cat card is visible
 function handleUserArrowClick(arrowPressed = "") {
-    if (arrowPressed === "ArrowLeft") {
+    if (arrowPressed === "ArrowLeft" && !cat_card_box.classList.contains("hide")) {
         changeCurrentCatBreed(0);
-    } else if (arrowPressed === "ArrowRight") {
+    } else if (arrowPressed === "ArrowRight" && !cat_card_box.classList.contains("hide")) {
         changeCurrentCatBreed(1);
     }
 }
@@ -451,6 +416,7 @@ document.onkeydown = function(e) {
 changeCatImage1();
 changeCatImage2();
 changeCatImage3();
+// changeCatImage4();
 
 // comment for testing ssh key after making repo public and back to private
 
@@ -480,6 +446,12 @@ function changeCatImage3() {
         $("#cat-img3").attr("src", response[0].url);
     });
 }
+
+// function changeCatImage4() {
+//     $.ajax(settings).done(function(response) {
+//         $("#cat-img4").attr("src", response[0].url);
+//     });
+// }
 
 // make image animation in About area, by changing its size at every 0.8 seconds
 setInterval(modifyPawImageSize, 800);

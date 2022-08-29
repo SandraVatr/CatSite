@@ -238,6 +238,7 @@
     #cat-breed-name {
         font-weight: bold;
     }
+    /* when the screen size is under 992px the cat breeed card info will be displayed on one collumn */
     
     .cat-information {
         /* padding: 1em;
@@ -246,6 +247,7 @@
         margin: 0 1em 1em;
         /* border-left: 4px solid black; */
     }
+    /* for screen sizes >= 992px the cat breed info will be displayed on 2 collumns and the first one needs padding */
     
     @media screen and (min-width: 992px) {
         .cat-information {
