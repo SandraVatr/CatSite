@@ -26,15 +26,7 @@
     
     .navigation-bar {
         background-color: #FFFEB7 !important;
-        /* border-bottom: 8px solid #FFDAC7; */
-        /* #F9FFA4 */
     }
-    /* .nav-bar { */
-    /* margin-right: 2em; */
-    /* } */
-    /* .navbar-brand-icon:hover {
-        width: 130%;
-    } */
     
     .navigation-item {
         /* color: #FFFFFF; */
@@ -51,16 +43,7 @@
         text-underline-offset: 7px; */
         font-size: 130%;
         color: rgb(206, 131, 131);
-        /* border: 4px solid #FFFEB7;
-        border-radius: 15px; */
-        /* border-bottom: 7px solid #FFDAC7;
-    border-radius: 7px; */
     }
-    /* .navigation-item:hover {
-    text-underline-position: under;
-    border: 3px solid white;
-    border-radius: 5px;
-} */
     
     .descr {
         background-color: #FFFEB7;
@@ -75,10 +58,6 @@
         padding-top: 0.2em;
         padding-left: 1em;
     }
-    /* .bbb { */
-    /* border: 10px solid #FFDAC7;
-        border-radius: 6px; */
-    /* } */
     
     .cat-image {
         border: 10px solid #FFDAC7;
@@ -90,16 +69,6 @@
         padding: auto;
         text-align: center;
         opacity: 100%;
-        /* margin: 2em auto;
-    display: block;
-    width: 25em;
-    height: 25em;
-    border-spacing: 0; */
-    }
-    /* does not work */
-    
-    .cat-image:hover {
-        width: 100%;
     }
     
     .ct {
@@ -135,8 +104,6 @@
     .container-2 {
         background-color: #FFDAC7;
         padding: 1em 0 0;
-        /* padding: 3em 10em;
-    min-height: 50em; */
     }
     
     .level-points {
@@ -200,11 +167,6 @@
         min-height: 60em;
         margin: 0 auto;
         width: 100%;
-        /* margin: 0 auto;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding: auto; */
     }
     
     .cat-breed-div {
@@ -212,8 +174,6 @@
     }
     
     .cat-breed-image {
-        /* width: 100%;
-    height: 100%; */
         max-width: 90%;
         height: auto;
         padding: 1em;
@@ -292,8 +252,6 @@
     }
     
     .card-count {
-        /* border: 5px solid rgb(192, 143, 143);
-    border-radius: 7px; */
         color: rgb(193, 144, 144);
         font-weight: bold;
         margin: 1em auto;
@@ -343,8 +301,6 @@
         border-radius: 6px;
         max-width: 90%;
         height: auto;
-        /* padding: 1em; */
-        /* margin: 1em; */
     }
     
     .random-cat-image:hover {
@@ -382,16 +338,8 @@
     }
     
     .cat-paws {
-        /* width: 70%; */
-        /* height: 300px; */
-        /* width: 140px;
-        height: 140px; */
         width: 70%;
         height: 60%;
-        /* transform: rotate(-20deg); */
-        /* text-align: center; */
-        /* padding: 1em auto; */
-        /* float: right; */
         margin: 1em;
         padding: auto;
     }

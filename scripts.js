@@ -1,36 +1,44 @@
-let catBreedList;
-let currentCatBreed = 0;
+let catBreedList; // the cat breed list of objects
+let currentCatBreed = 0; // the current position in the cat breed array
+
+// navbar link for the display of the cat breed card
 const cat_breeds_link = document.getElementById("cat-breeds-link");
 cat_breeds_link.addEventListener("click", showCatBreedCard);
+
+// buttons for the cat breed card (next, previous) and the count text
 const next_cat_breed_button = document.getElementById("next-cat-breed-btn");
 const previous_cat_breed_button = document.getElementById("previous-cat-breed-btn");
 next_cat_breed_button.addEventListener("click", changeCatBreedCard);
 previous_cat_breed_button.addEventListener("click", changeCatBreedCard);
 const cat_card_count_text = document.getElementById("cat-card-count");
 
+// the cat card area which contains the cat breed information
 const cat_card_box = document.getElementById("cat-card-box");
 
+// the navbar link for displaying a random cat image
 const random_cat_link = document.getElementById("random-cat");
 random_cat_link.addEventListener("click", showRandomCatImage);
 const random_cat_box = document.getElementById("random-cat-box");
 
 // cat images from the welcome section
-const cat_image_descr = document.getElementById("cat-img");
+const cat_image_descr = document.getElementById("cat-img1");
 const cat_image2_descr = document.getElementById("cat-img2");
 const cat_image3_descr = document.getElementById("cat-img3");
 // const cat_image4_descr = document.getElementById("cat-img4");
 
+// elements from the about box
 const about_box = document.getElementById("about-box");
 const about_box_link = document.getElementById("about-box-link");
 about_box_link.addEventListener("click", showAboutBox);
 
+// shows the about box and hides other information that is visible
 function showAboutBox() {
     random_cat_box.classList.add("hide");
     cat_card_box.classList.add("hide");
     about_box.classList.remove("hide");
 }
 
-// settings for cat breed list
+// API settings for cat breed list
 var settingsBreed = {
     "async": true,
     "crossDomain": true,
@@ -41,7 +49,7 @@ var settingsBreed = {
     }
 }
 
-// settings for random cat image
+// API settings for random cat image
 var settings = {
     "async": true,
     "crossDomain": true,
@@ -52,10 +60,13 @@ var settings = {
     }
 }
 
+// variable which holds the api key from the json file
 let api_key;
 apiKeyJsonData();
 
-// copy the api key from the JSON file
+/**
+ * Copy the api key from the JSON file and store it in an variable
+ */
 function apiKeyJsonData() {
     // copy data from JSON
     fetch("App_Data/keys.json") // fetch(url) ---- for json file on the same level
@@ -71,7 +82,9 @@ function apiKeyJsonData() {
         })
 }
 
-// show the random cat image area and hide the other areas
+/**
+ * Show the random cat image area and hide the other areas.
+ */
 function showRandomCatImage() {
     $.ajax(settings).done(function(response) {
         console.log("zzzzzzzzzzz " + response[0].url);
@@ -82,7 +95,9 @@ function showRandomCatImage() {
     });
 }
 
-// display the cat breed card and hide the other displayed areas
+/**
+ * Display the cat breed card and hide the other displayed areas.
+ */
 function showCatBreedCard() {
     currentCatBreed = 0;
     populateCatBreedCard();
@@ -93,7 +108,9 @@ function showCatBreedCard() {
 
 initializeCatBreedList();
 
-// initializes the cat breed list with the api response
+/**
+ * Initialize the cat breed list with the array given by the API response.
+ */
 function initializeCatBreedList() {
     $.ajax(settingsBreed).done(function(response) {
         // console.log("Cat breed list length: " + response.length);
@@ -105,7 +122,12 @@ function initializeCatBreedList() {
     });
 }
 
-// modify thre friendliness levels accordingly to the needed property
+/**
+ * Modify the friendliness levels accordingly to the needed property
+ * @param {number} friendlinessLevel a number between 1 and 5
+ * @param {string} propertyId  the id of the html element that will be modified
+ * @param {string} nameOfProperty the name of the property to be written in the cat card
+ */
 function displayFriendlynessLevel(friendlinessLevel = -1, propertyId = "", nameOfProperty = "") {
     if (friendlinessLevel != -1 && propertyId != "" && nameOfProperty != "") {
         let level;
@@ -133,8 +155,11 @@ function displayFriendlynessLevel(friendlinessLevel = -1, propertyId = "", nameO
     }
 }
 
-
-// function to modify the ballpoint levels for different properties that exist for each breed
+/**
+ * Modify the ballpoint levels for different properties that exist for each breed
+ * @param {string} propertyNameFromId  the name used to find the target element by id 
+ * @param {string} propertyInCatBreedArray the exact name of the property to be extracted from the cat breed array
+ */
 function fillCharacteristicsLevels(propertyNameFromId = "", propertyInCatBreedArray = "") {
     let procentageFilled = "procentage-filled";
     let procentageNotFilled = "procentage-not-filled";
@@ -181,7 +206,11 @@ function fillCharacteristicsLevels(propertyNameFromId = "", propertyInCatBreedAr
     }
 }
 
-// populates the cat breed card accordingly to the current breeed index
+
+/**
+ * Populates the cat breed card accordingly to the cat breed from the current breeed index.
+ * It calls other functions to complete the needed information.
+ */
 function populateCatBreedCard() {
     // makes sure the cat breed array curend index isn't out of bounds
     if (catBreedList != null) {
@@ -348,8 +377,11 @@ function populateCatBreedCard() {
     }
 }
 
-// repopulates the cat breed card with the current cat breeed info given by the current index in the cat breeds array
-// is called by user clicking the cat breeed card buttons
+/**
+ * Repopulate the cat breed card with the current cat breeed info given by the current index in the cat breeds array.
+ * Is called by user clicking the cat breeed card buttons.
+ * @param event the event that called this function
+ */
 function changeCatBreedCard(event) {
     // verify from which button the function was called
     if (event.target.id === "previous-cat-breed-btn") {
@@ -367,7 +399,10 @@ function changeCatBreedCard(event) {
     }
 }
 
-// change the info from cat breed card to the next or previous cat breed
+/**
+ * Change the info from cat breed card to the next or previous cat breed
+ * @param {number} action a number (0 or 1) that indentifies where to move in the cat breeed array: forward/backward 
+ */
 function changeCurrentCatBreed(action = 2) {
     // 0 == previous cat breed, 1 == next cat breed
     if (action === 0) {
@@ -383,7 +418,10 @@ function changeCurrentCatBreed(action = 2) {
     }
 }
 
-// user clicks left or right arrow when cat card is visible
+/**
+ * Handle the pressing of the left or right arrow when the cat breed card is visible.
+ * @param {string} arrowPressed the name of the arrow that was pressed (left or right) 
+ */
 function handleUserArrowClick(arrowPressed = "") {
     if (arrowPressed === "ArrowLeft" && !cat_card_box.classList.contains("hide")) {
         changeCurrentCatBreed(0);
@@ -392,7 +430,10 @@ function handleUserArrowClick(arrowPressed = "") {
     }
 }
 
-// see when the user presses side arrow keys
+/**
+ * See when the user presses side arrow keys and handle those events. 
+ * @param {keydown} e the event that called this function 
+ */
 document.onkeydown = function(e) {
     switch (e.key) {
         case 'ArrowLeft':
@@ -407,16 +448,15 @@ document.onkeydown = function(e) {
     }
 };
 
-// set intervals for Welcome area images changing
-// setInterval(changeCatImage1, 4000);
-// setInterval(changeCatImage2, 7000);
-// setInterval(changeCatImage3, 9000);
+// set intervals for Welcome area images changing at every 4, 7 and 9 seconds
+// setInterval(changeCatImage(1), 2000);
+// setInterval(changeCatImage(2), 4000);
+// setInterval(changeCatImage(3), 2000);
 
-// change the 3 cat images from the description area with some new ones
-changeCatImage1();
-changeCatImage2();
-changeCatImage3();
-// changeCatImage4();
+// change the 3 cat images from the description area 
+changeCatImage(1);
+changeCatImage(2);
+changeCatImage(3);
 
 // comment for testing ssh key after making repo public and back to private
 
@@ -428,36 +468,23 @@ setTimeout(() => {
     // cat_image4_descr.classList.remove("hide");
 }, 2000)
 
-// api calls to change the 3 images from the description area
-function changeCatImage1() {
+/**
+ * Makes an api call to change one of the 3 images from the description area.
+ * @param {number} catImageNo a number (1, 2 or 3) which indicates which image needs to be changed
+ */
+function changeCatImage(catImageNo = 1) {
     $.ajax(settings).done(function(response) {
-        $("#cat-img").attr("src", response[0].url);
+        $("#cat-img" + String(catImageNo)).attr("src", response[0].url);
     });
 }
-
-function changeCatImage2() {
-    $.ajax(settings).done(function(response) {
-        $("#cat-img2").attr("src", response[0].url);
-    });
-}
-
-function changeCatImage3() {
-    $.ajax(settings).done(function(response) {
-        $("#cat-img3").attr("src", response[0].url);
-    });
-}
-
-// function changeCatImage4() {
-//     $.ajax(settings).done(function(response) {
-//         $("#cat-img4").attr("src", response[0].url);
-//     });
-// }
 
 // make image animation in About area, by changing its size at every 0.8 seconds
 setInterval(modifyPawImageSize, 800);
 const cat_paw_image = document.getElementById("cat-paws-img");
 
-// toggles the zoom class for the About area image
+/**
+ *  Toggle the zoom class for the About area image by adding a zoom class to it.
+ */
 function modifyPawImageSize() {
     if (!about_box.classList.contains("hide")) {
         if (cat_paw_image.classList.contains("zoom")) {
