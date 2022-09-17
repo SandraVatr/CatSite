@@ -1,350 +1,369 @@
-    body {
-        /* align-items: center;
-    display: flex;
-    justify-content: center; */
-        margin: 0px;
-        padding: 0px;
-        overflow-x: hidden;
-        font-family: 'Montserrat', sans-serif;
-    }
-    
-    h1 {
-        font-weight: bold;
-    }
-    
-    html {
-        overflow-x: hidden;
-    }
-    
-    a {
-        color: rgb(192, 117, 117);
-        font-weight: bold;
-    }
-    /* .citation a:visited {
-        color: rgb(117, 192, 191);
-    } */
-    
-    .navigation-bar {
-        background-color: #FFFEB7 !important;
-    }
-    
-    .navigation-item {
-        /* color: #FFFFFF; */
-        font-weight: bold;
-        margin: auto 0.7em;
-    }
-    
-    .navigation-link {
-        color: rgb(79, 79, 79);
-    }
-    
-    .nav-link:hover {
-        /* text-decoration: underline 7px solid #FFDAC7;
-        text-underline-offset: 7px; */
-        font-size: 130%;
-        color: rgb(206, 131, 131);
-    }
-    
-    .descr {
-        background-color: #FFFEB7;
-        margin: 0 auto;
-        min-height: 30em;
-        padding: 2.5em 0 0;
-    }
-    
-    .descr-text {
-        color: rgb(79, 79, 79);
-        font-weight: bold;
-        padding-top: 0.2em;
-        padding-left: 1em;
-    }
-    
-    .cat-image {
-        border: 10px solid #FFDAC7;
-        border-radius: 6px;
-        max-width: 80%;
-        height: auto;
-        /* padding: 1em; */
-        margin: 1em;
-        padding: auto;
-        text-align: center;
-        opacity: 100%;
-    }
-    
-    .ct {
-        text-align: center;
-    }
-    
-    .description {
-        background-color: #FFFEB7;
-        border: 10px solid rgb(192, 143, 143);
-        border-radius: 6px;
-        color: rgb(79, 79, 79);
-        padding: 3em;
-        margin: 6em 0.5em;
-    }
-    
-    .zoom {
-        transform: scale(1.3);
-    }
-    
-    .zoom-on-hover:hover {
-        transform: scale(1.1);
-    }
-    
-    .about-text {
-        /* color: rgb(192, 143, 143); */
-        margin-bottom: 1em;
-    }
-    
-    .citation {
-        margin-top: 3em;
-    }
-    
-    .container-2 {
-        background-color: #FFDAC7;
-        padding: 1em 0 0;
-    }
-    
-    .level-points {
-        padding: 0.7em 0.7em 1.5em;
-    }
-    
-    .procentage-filled {
-        background-color: #14C38E;
-        border: 2px solid #14C38E;
-        border-radius: 6px;
-        color: #ffffff;
-        text-align: center;
-        /* margin: 1px auto; */
-        margin-left: 1px;
-        margin-bottom: 1px;
-        width: 25px;
-        height: 15px;
-    }
-    
-    .procentage-not-filled {
-        background-color: #cbfced;
-        border: 2px solid #14C38E;
-        border-radius: 6px;
-        color: rgb(79, 79, 79);
-        text-align: center;
-        /* margin: 1px auto; */
-        margin-left: 1px;
-        margin-bottom: 1px;
-        width: 25px;
-        height: 15px;
-    }
-    
-    .procentage-filled-affection {
-        background-color: #fd2727;
-        border: 2px solid #fd2727;
-        border-radius: 6px;
-        color: #ffffff;
-        text-align: center;
-        /* margin: 1px auto; */
-        margin-left: 1px;
-        margin-bottom: 1px;
-        width: 25px;
-        height: 15px;
-    }
-    
-    .procentage-not-filled-affection {
-        background-color: #fccbcb;
-        border: 2px solid #fd2727;
-        border-radius: 6px;
-        color: rgb(79, 79, 79);
-        text-align: center;
-        /* margin: 1px auto; */
-        margin-left: 1px;
-        margin-bottom: 1px;
-        width: 25px;
-        height: 15px;
-    }
-    
-    .cat-card {
-        background-color: rgb(202, 160, 160);
-        min-height: 60em;
-        margin: 0 auto;
-        width: 100%;
-    }
-    
-    .cat-breed-div {
-        text-align: center;
-    }
-    
-    .cat-breed-image {
-        max-width: 90%;
-        height: auto;
-        padding: 1em;
-        margin: 1em;
-        object-fit: cover;
-    }
-    
-    .cat-breed-img-box {
-        padding: 1em;
-    }
-    
-    .card-cat {
-        margin: 1em auto;
-    }
-    
-    .cat-card-content {
-        border: 10px solid rgb(192, 143, 143);
-        border-radius: 6px;
-        background-color: #FFF6EA;
-    }
-    
-    #cat-breed-name {
-        font-weight: bold;
-    }
-    /* when the screen size is under 992px the cat breeed card info will be displayed on one collumn */
-    
-    .cat-information {
-        /* padding: 1em;
+/* 
+    *  STYLES LIST
+    *   
+    *  I - GENERAL STYLES
+    * II - NAVIGATION BAR
+    * III - WELCOME AREA OF THE PAGE
+    * IV - ABOUT BOX WITH INFORMATIONS ABOUT THE PAGE  
+    * V - CAT BREEED BOX AND CARD
+    * VI - RANDOM CAT BOX
+    * VII - IMAGE AT THE END OF THE PAGE
+*/
+
+
+/****** I - GENERAL STYLES ******/
+
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+a {
+    color: rgb(192, 117, 117);
+    font-weight: bold;
+}
+
+.container-2 {
+    background-color: #FFDAC7;
+    padding: 1em 0 0;
+}
+
+.hide {
+    display: none;
+}
+
+
+/****** II - NAVIGATION BAR ******/
+
+.navigation-bar {
+    background-color: #FFFEB7 !important;
+}
+
+.navigation-item {
+    /* color: #FFFFFF; */
+    font-weight: bold;
+    margin: auto 0.7em;
+}
+
+.navigation-link {
+    color: rgb(79, 79, 79);
+}
+
+.nav-link:hover {
+    font-size: 130%;
+    color: rgb(206, 131, 131);
+}
+
+
+/****** III - WELCOME AREA OF THE PAGE  ******/
+
+.descr {
+    background-color: #FFFEB7;
+    margin: 0 auto;
+    min-height: 30em;
+    padding: 2.5em 0 0;
+}
+
+.descr-text {
+    color: rgb(79, 79, 79);
+    font-weight: bold;
+    padding-top: 0.2em;
+    padding-left: 1em;
+}
+
+.cat-image {
+    border: 10px solid #FFDAC7;
+    border-radius: 6px;
+    max-width: 80%;
+    height: auto;
+    /* padding: 1em; */
+    margin: 1em;
+    padding: auto;
+    text-align: center;
+    opacity: 100%;
+}
+
+.ct {
+    text-align: center;
+}
+
+.cat-tail {
+    display: block;
+    margin: auto auto 0;
+    margin-right: 0;
+    padding: auto;
+    text-align: right;
+    transform: scaleX(-1);
+}
+
+hr {
+    background-color: rgb(193, 144, 144);
+    color: rgb(193, 144, 144);
+    height: 5px;
+    border: 1px solid rgb(193, 144, 144);
+    width: 100%;
+    margin: 0 auto 0;
+    opacity: 100%;
+}
+
+.cat-paws {
+    width: 70%;
+    height: 60%;
+    margin: 1em;
+    padding: auto;
+}
+
+.paw-container {
+    text-align: center;
+    margin: auto;
+}
+
+
+/****** IV - ABOUT BOX WITH INFORMATIONS ABOUT THE PAGE  ******/
+
+.description {
+    background-color: #FFFEB7;
+    border: 10px solid rgb(192, 143, 143);
+    border-radius: 6px;
+    color: rgb(79, 79, 79);
+    padding: 3em;
+    margin: 6em 0.5em;
+}
+
+.zoom {
+    transform: scale(1.3);
+}
+
+.zoom-on-hover:hover {
+    transform: scale(1.1);
+}
+
+.about-text {
+    /* color: rgb(192, 143, 143); */
+    margin-bottom: 1em;
+}
+
+.citation {
+    margin-top: 3em;
+}
+
+
+/****** V - CAT BREEED BOX AND CARD ******/
+
+.level-points {
+    padding: 0.7em 0.7em 1.5em;
+}
+
+.procentage-filled {
+    background-color: #14C38E;
+    border: 2px solid #14C38E;
+    border-radius: 6px;
+    color: #ffffff;
+    text-align: center;
+    /* margin: 1px auto; */
+    margin-left: 1px;
+    margin-bottom: 1px;
+    width: 25px;
+    height: 15px;
+}
+
+.procentage-not-filled {
+    background-color: #cbfced;
+    border: 2px solid #14C38E;
+    border-radius: 6px;
+    color: rgb(79, 79, 79);
+    text-align: center;
+    /* margin: 1px auto; */
+    margin-left: 1px;
+    margin-bottom: 1px;
+    width: 25px;
+    height: 15px;
+}
+
+.procentage-filled-affection {
+    background-color: #fd2727;
+    border: 2px solid #fd2727;
+    border-radius: 6px;
+    color: #ffffff;
+    text-align: center;
+    /* margin: 1px auto; */
+    margin-left: 1px;
+    margin-bottom: 1px;
+    width: 25px;
+    height: 15px;
+}
+
+.procentage-not-filled-affection {
+    background-color: #fccbcb;
+    border: 2px solid #fd2727;
+    border-radius: 6px;
+    color: rgb(79, 79, 79);
+    text-align: center;
+    /* margin: 1px auto; */
+    margin-left: 1px;
+    margin-bottom: 1px;
+    width: 25px;
+    height: 15px;
+}
+
+.cat-card {
+    background-color: rgb(202, 160, 160);
+    min-height: 60em;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.cat-breed-div {
+    text-align: center;
+}
+
+.cat-breed-image {
+    max-width: 90%;
+    height: auto;
+    padding: 1em;
+    margin: 1em;
+    object-fit: cover;
+}
+
+.cat-breed-img-box {
+    padding: 1em;
+}
+
+.card-cat {
+    margin: 1em auto;
+}
+
+.cat-card-content {
+    border: 10px solid rgb(192, 143, 143);
+    border-radius: 6px;
+    background-color: #FFF6EA;
+}
+
+#cat-breed-name {
+    font-weight: bold;
+}
+
+
+/* when the screen size is under 992px the cat breeed card info will be displayed on one collumn */
+
+.cat-information {
+    /* padding: 1em;
         margin: 1em; */
-        padding: 0 1em 1em;
-        margin: 0 1em 1em;
-        /* border-left: 4px solid black; */
-    }
-    /* for screen sizes >= 992px the cat breed info will be displayed on 2 collumns and the first one needs padding */
-    
-    @media screen and (min-width: 992px) {
-        .cat-information {
-            padding: 1em;
-            margin: 1em;
-        }
-    }
-    
-    .catalog-msg {
-        color: rgb(79, 79, 79);
-        font-weight: bold;
-        margin: 3em 0;
-        padding: 0;
-        text-align: left;
-    }
-    
-    .hide {
-        display: none;
-    }
-    
-    .card-button {
-        background-color: rgb(192, 143, 143);
-        border: 5px solid rgb(192, 143, 143);
-        border-radius: 7px;
-        color: white;
-        font-weight: bold;
-        margin: 1.5em auto 1em;
-        max-width: 180px;
-        padding: 0.2em;
-        width: 50%;
-        text-align: center;
-    }
-    
-    .card-button:hover {
-        background-color: #FFDAC7;
-    }
-    
-    .card-buttons {
-        margin: 2em auto;
-        padding: auto;
-        text-align: center;
-    }
-    
-    .card-count {
-        color: rgb(193, 144, 144);
-        font-weight: bold;
-        margin: 1em auto;
-        text-align: center;
-    }
-    
-    .cat-image-end {
-        display: block;
-        max-width: 350px;
-        max-height: 200px;
-        width: 80%;
-        height: 60%;
-        margin: 15em auto 0;
-        padding: auto;
-        text-align: center;
-    }
-    
-    .cat-image-end-of-page {
-        margin-bottom: 0;
-    }
-    
-    .cat-card-descr {
-        padding: 1em 1em 0;
-        margin: 1em 1em 0;
-    }
-    
-    @media screen and (min-width: 992px) {
-        .cat-card-descr {
-            padding: 1em;
-            margin: 1em;
-        }
-    }
-    
-    .random-cat-box {
-        text-align: center;
-    }
-    
-    .random-cat-msg {
-        color: rgb(79, 79, 79);
-        font-weight: bold;
-        margin: 3em 0;
-        text-align: center;
-    }
-    
-    .random-cat-image {
-        border: 10px solid rgb(193, 144, 144);
-        border-radius: 6px;
-        max-width: 90%;
-        height: auto;
-    }
-    
-    .random-cat-image:hover {
-        width: 75%;
-    }
-    
-    .msg {
-        font-weight: bold;
-        margin-top: 1em;
-    }
-    
-    .cat-tail {
-        margin-left: 0;
-        margin-top: 0;
-        padding-left: 0;
-    }
-    
-    .cat-tail-2 {
-        display: block;
-        margin: auto auto 0;
-        margin-right: 0;
-        padding: auto;
-        text-align: right;
-        transform: scaleX(-1);
-    }
-    
-    hr {
-        background-color: rgb(193, 144, 144);
-        color: rgb(193, 144, 144);
-        height: 5px;
-        border: 1px solid rgb(193, 144, 144);
-        width: 100%;
-        margin: 0 auto 0;
-        opacity: 100%;
-    }
-    
-    .cat-paws {
-        width: 70%;
-        height: 60%;
+    padding: 0 1em 1em;
+    margin: 0 1em 1em;
+    /* border-left: 4px solid black; */
+}
+
+
+/* for screen sizes >= 992px the cat breed info will be displayed on 2 collumns and the first one needs padding */
+
+@media screen and (min-width: 992px) {
+    .cat-information {
+        padding: 1em;
         margin: 1em;
-        padding: auto;
     }
-    
-    .paw-container {
-        text-align: center;
-        margin: auto;
+}
+
+.catalog-msg {
+    color: rgb(79, 79, 79);
+    font-weight: bold;
+    margin: 3em 0;
+    padding: 0;
+    text-align: left;
+}
+
+.card-button {
+    background-color: rgb(192, 143, 143);
+    border: 5px solid rgb(192, 143, 143);
+    border-radius: 7px;
+    color: white;
+    font-weight: bold;
+    margin: 1.5em auto 1em;
+    max-width: 180px;
+    padding: 0.2em;
+    width: 50%;
+    text-align: center;
+}
+
+.card-button:hover {
+    background-color: #FFDAC7;
+}
+
+.card-buttons {
+    margin: 2em auto;
+    padding: auto;
+    text-align: center;
+}
+
+.card-count {
+    color: rgb(193, 144, 144);
+    font-weight: bold;
+    margin: 1em auto;
+    text-align: center;
+}
+
+.cat-card-descr {
+    padding: 1em 1em 0;
+    margin: 1em 1em 0;
+}
+
+@media screen and (min-width: 992px) {
+    .cat-card-descr {
+        padding: 1em;
+        margin: 1em;
     }
+}
+
+
+/****** VI - RANDOM CAT BOX ******/
+
+.random-cat-box {
+    text-align: center;
+}
+
+.random-cat-msg {
+    color: rgb(79, 79, 79);
+    font-weight: bold;
+    margin: 3em 0;
+    text-align: center;
+}
+
+.random-cat-image {
+    border: 10px solid rgb(193, 144, 144);
+    border-radius: 6px;
+    max-width: 90%;
+    height: auto;
+}
+
+.random-cat-image:hover {
+    width: 75%;
+}
+
+.msg {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+
+/****** VII - IMAGE AT THE END OF THE PAGE ******/
+
+.cat-image-end {
+    display: block;
+    max-width: 350px;
+    max-height: 200px;
+    width: 80%;
+    height: 60%;
+    margin: 15em auto 0;
+    padding: auto;
+    text-align: center;
+}

@@ -201,11 +201,8 @@ function fillCharacteristicsLevels(propertyNameFromId = "", propertyInCatBreedAr
         // reset the class that changes the ballpoints color to the default one == green color
         procentageFilled = "procentage-filled";
         procentageNotFilled = "procentage-not-filled";
-    } else {
-
     }
 }
-
 
 /**
  * Populates the cat breed card accordingly to the cat breed from the current breeed index.
@@ -373,7 +370,7 @@ function populateCatBreedCard() {
             }
         }
     } else {
-        console.log("Cat breed list is empty");
+        console.log("Cat breed list is empty.");
     }
 }
 
@@ -450,17 +447,15 @@ document.onkeydown = function(e) {
 
 // set intervals for Welcome area images changing at every 4, 7 and 9 seconds
 // setInterval(changeCatImage(1), 2000);
-// setInterval(changeCatImage(2), 4000);
-// setInterval(changeCatImage(3), 2000);
+// setInterval(changeCatImage(2), 6000);
+// setInterval(changeCatImage(3), 9000);
 
-// change the 3 cat images from the description area 
+// display the 3 cat images from the description area 
 changeCatImage(1);
 changeCatImage(2);
 changeCatImage(3);
 
-// comment for testing ssh key after making repo public and back to private
-
-// loads the 3 cat images in the description area and waites 2 seconds to make sure the api calls to get the images are made
+// load the 3 cat images in the description area and wait 2 seconds to make sure the api calls to get the images are made
 setTimeout(() => {
     cat_image_descr.classList.remove("hide");
     cat_image2_descr.classList.remove("hide");
