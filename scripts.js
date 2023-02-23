@@ -211,6 +211,7 @@ function fillCharacteristicsLevels(propertyNameFromId = "", propertyInCatBreedAr
 function populateCatBreedCard() {
     // makes sure the cat breed array curend index isn't out of bounds
     if (catBreedList != null) {
+        console.log(catBreedList);
         if (currentCatBreed >= 0 && currentCatBreed <= catBreedList.length - 1) {
             if (currentCatBreed === 0) {
                 previous_cat_breed_button.classList.add("hide");
@@ -228,8 +229,14 @@ function populateCatBreedCard() {
             if (catBreedList[currentCatBreed].hasOwnProperty('image')) {
                 $("#cat-breed-img").attr("src", catBreedList[currentCatBreed].image.url);
                 $("#cat-breed-img").attr("alt", "Image not found");
-            }
+            } 
 
+            if (catBreedList[currentCatBreed].hasOwnProperty('reference_image_id')) {
+                let l = "https://cdn2.thecatapi.com/images/" + catBreedList[currentCatBreed].reference_image_id.toString() + ".jpg";
+                $("#cat-breed-img").attr("src", l); 
+                $("#cat-breed-img").attr("alt", "Image not found");
+            } 
+            
             // set the cat breed name
             if (catBreedList[currentCatBreed].hasOwnProperty("name")) {
                 $("#cat-breed-name").text(catBreedList[currentCatBreed].name);
