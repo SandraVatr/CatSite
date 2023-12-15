@@ -16,4 +16,4 @@ Random cat image which the user can get anytime just by pressing a button.
 - App
 
 ## Live App
-https://sdrann.github.io/fridge-notes-ap
+https://sandravatr.github.io/CatSite/
