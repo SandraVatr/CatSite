@@ -6,6 +6,7 @@ All this is possible with the use of TheCatAPI which provides images and detaile
 ## TheCatAPI can be found here
 https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t
 
+
 The welcome section of the page containing the header, text and images.
 ![PROJECT IMAGE 1](catApp2.PNG)
 
